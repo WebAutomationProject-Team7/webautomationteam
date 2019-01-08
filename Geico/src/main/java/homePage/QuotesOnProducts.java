@@ -9,6 +9,18 @@ import pagebase.ApplicationPageBase;
 import java.util.*;
 
 public class QuotesOnProducts extends ApplicationPageBase {
+    @FindBy(id = "validationSummary")
+    public static WebElement errorMsg;
+    @FindBy(xpath = "//div[@id='form-contents']//h1")
+    public static WebElement umbrellaMessage;
+    @FindBy(xpath = "//div[@id='inputcontent']//h1[.='Under Construction']")
+    public static WebElement rvMessage;
+    @FindBy(xpath = "//div[@id='form-contents']//h1[.='Classic Car Insurance']")
+    public static WebElement collectorAutoMessage;
+    @FindBy(xpath = "//div[@id='form-contents']//h1")
+    public static WebElement mobileHMessage;
+    @FindBy(xpath = "/html//label[@id='ContentPlaceHolder1_lblBusinessTypeCustomer']")
+    public static WebElement commAutoMessage;
     @FindBy(css = ".icon-motorcycle")
     public static WebElement motorCycleInsIcon;
     @FindBy(css = ".icon-boat-ins")
@@ -23,8 +35,6 @@ public class QuotesOnProducts extends ApplicationPageBase {
     public static WebElement rentersInsIcon;
     @FindBy(css = ".icon-condo-ins")
     public static WebElement condoInsIcon;
-
-
     @FindBy(css = ".icon-auto-collector-ins")
     public static WebElement collectorAutoIcon;
     @FindBy(css = ".icon.icon-mobile-home-ins")
@@ -41,7 +51,6 @@ public class QuotesOnProducts extends ApplicationPageBase {
     public static WebElement businessOwnersIcon;
     @FindBy(xpath = "//div[@id='workerscompensation']//span")
     public static WebElement workersCompensationIcon;
-
     @FindBy(className = "icon icon-life-ins")
     public static WebElement lifeInsIcon;
     @FindBy(css = ".icon.icon-car-sharing")
@@ -60,7 +69,6 @@ public class QuotesOnProducts extends ApplicationPageBase {
     public static WebElement landlordInsIcon;
     @FindBy(css = "#mexicoAuto>.circle>.icon.icon-vehicle")
     public static WebElement mexicoAutoIcon;
-
     @FindBy(css = "#submitButton")
     public static WebElement getQoute;
     @FindBy(id = "zip")
@@ -71,43 +79,25 @@ public class QuotesOnProducts extends ApplicationPageBase {
     public static WebElement arrow2;
     @FindBy(css = ".chevron.icon-chevron-right.highlighted")
     public static WebElement arrow3;
-    @FindBy(id = "validationSummary")
-    public static WebElement errorMsg;
-    @FindBy(xpath = "//div[@id='form-contents']//h1")
-    public static WebElement umbrellaMessage;
-    @FindBy(xpath = "//div[@id='inputcontent']//h1[.='Under Construction']")
-    public static WebElement rvMessage;
-    @FindBy(xpath = "//div[@id='form-contents']//h1[.='Classic Car Insurance']")
-    public static WebElement collectorAutoMessage;
-    @FindBy(xpath = "//div[@id='form-contents']//h1")
-    public static WebElement mobileHMessage;
-    @FindBy(xpath = "/html//label[@id='ContentPlaceHolder1_lblBusinessTypeCustomer']")
-    public static WebElement commAutoMessage;
+
 
     public String getQuoteWithNoZipP1(WebElement insuranceProduct, WebElement message) {
         insuranceProduct.click();
         getQoute.click();
         String s = message.getText();
-
         return s;
     }
-
     public String getQuoteWithNoZipP2(WebElement insuranceProduct, WebElement message) {
         arrow1.click();
         insuranceProduct.click();
         getQoute.click();
         String s = message.getText();
-
         return s;
     }
-
     public WebElement moveTomodalforFlood() {
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("wrapper"))));
         WebElement floddMessage = driver.findElement(By.xpath("/html//div[@id='external_disclaimer_quote_modal']//p[.='You are about to leave geico.com']"));
         return floddMessage;
-
     }
-
-
 }
 
