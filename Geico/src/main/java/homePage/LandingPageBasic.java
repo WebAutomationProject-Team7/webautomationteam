@@ -4,8 +4,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
 public class LandingPageBasic extends ApplicationPageBase {
-    @FindBy(name = "OnlineOpinion1")
-    public static WebElement feedbackFrame;
+
     @FindBy(xpath = "//label[@for='overall_4']")
     public static WebElement verySatisfiedIcon;
     @FindBy(css = "#header-middle-links > a")
@@ -30,10 +29,7 @@ public class LandingPageBasic extends ApplicationPageBase {
     public static WebElement locationDiv;
     @FindBy(xpath = "//div[@data-side-panel='search']")
     public static WebElement searchDiv;
-    @FindBy(id="oo_tab")
-    public static WebElement feedbackIcon;
-    @FindBy (css = ".large_only")
-    public static WebElement heroImage;
+
 
     public boolean clickOnInsurance() throws InterruptedException {
         insuranceList.click();
