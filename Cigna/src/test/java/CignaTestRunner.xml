@@ -4,6 +4,7 @@
 <suite name="Cigna Automation Test" parallel="false">
 
     <parameter name="useCloudEnv" value="false"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="os" value="Windows"/>
     <parameter name="os_version" value="10"/>
     <parameter name="browserName" value="Chrome"/>
@@ -13,8 +14,9 @@
     <test name="Cigna">
         <classes>
 
-            <class name="TestCase.TestOwnPage"/>
             <class name="TestCase.TestSignInPage"/>
+            <class name="TestCase.TestOwnPage"/>
+            
         </classes>
     </test>
 </suite>
