@@ -15,6 +15,7 @@
         <classes>
             <class name="homePageTest.SearchFunctionalityTest"/>
             <class name="homePageTest.FeedbackTest"/>
+            <class name="homePageTest.LandingPageBasicTest"/>
         </classes>
     </test>
 </suite>
