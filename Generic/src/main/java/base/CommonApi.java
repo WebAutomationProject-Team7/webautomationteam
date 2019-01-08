@@ -16,8 +16,8 @@ public class CommonApi {
     @Parameters({/*"useCloudEnv","cloudEnvName", */"os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
     public void setUp(/*@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,*/
-                     @Optional("windows") String os, @Optional("10") String os_version, @Optional("firefox") String browserName, @Optional("34")
-                     String browserVersion, @Optional("www.google.com") String url) throws IOException {
+                     @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome") String browserName, @Optional("34")
+                     String browserVersion, @Optional("https://www.geico.com") String url) throws IOException {
         getLocalDriver(browserName, os);
         wait = new WebDriverWait(driver, 40);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -29,18 +29,18 @@ public class CommonApi {
     public WebDriver getLocalDriver(String browserName, String os) {
         if (browserName.equalsIgnoreCase("chrome")) {
             if (os.equalsIgnoreCase("windows")) {
-                System.setProperty("webdriver.chrome.driver", "C:\\Users\\arifq\\eclipse-workspace\\webautomationpractice\\Generic\\Drivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "..\\Generic\\Drivers\\chromedriver.exe");
                 driver = new ChromeDriver();
             } else if (os.equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/drivers/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "../Generic/Drivers/chromedriver");
                 driver = new ChromeDriver();
             }
         } else if (browserName.equalsIgnoreCase("firefox")) {
             if (os.equalsIgnoreCase("windows")) {
-                System.setProperty("webdriver.gecko.driver", "C:\\Users\\arifq\\eclipse-workspace\\webautomationpractice\\Generic\\Drivers\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "..\\Generic\\Drivers\\geckodriver.exe");
                 driver = new FirefoxDriver();
             } else if (os.equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/drivers/mac/geckodriver");
+                System.setProperty("webdriver.gecko.driver", "../Generic/Drivers/geckodriver");
                 driver = new FirefoxDriver();
             }
         }
