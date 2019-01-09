@@ -40,7 +40,7 @@ public class CommonApi {
                 System.setProperty("webdriver.gecko.driver", "..\\Generic\\Drivers\\geckodriver.exe");
                 driver = new FirefoxDriver();
             } else if (os.equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/Drivers/geckodriver");
+                System.setProperty("webdriver.gecko.driver", "../Generic/Dgit rivers/geckodriver");
                 driver = new FirefoxDriver();
             }
         }
