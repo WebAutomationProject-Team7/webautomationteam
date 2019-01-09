@@ -16,7 +16,7 @@
 
             <class name="TestCase.TestSignInPage"/>
             <class name="TestCase.TestOwnPage"/>
-            
+
         </classes>
     </test>
 </suite>
