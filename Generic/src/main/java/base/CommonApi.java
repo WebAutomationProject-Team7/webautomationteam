@@ -17,7 +17,7 @@ public class CommonApi {
     @BeforeMethod
     public void setUp(/*@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,*/
                      @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome") String browserName, @Optional("34")
-                     String browserVersion, @Optional("https://www.geico.com") String url) throws IOException {
+                     String browserVersion, @Optional("https://www.google.com") String url) throws IOException {
         getLocalDriver(browserName, os);
         wait = new WebDriverWait(driver, 10);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -40,7 +40,7 @@ public class CommonApi {
                 System.setProperty("webdriver.gecko.driver", "..\\Generic\\Drivers\\geckodriver.exe");
                 driver = new FirefoxDriver();
             } else if (os.equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.gecko.driver", "../Generic/Dgit rivers/geckodriver");
+                System.setProperty("webdriver.gecko.driver", "../Generic/Drivers/geckodriver");
                 driver = new FirefoxDriver();
             }
         }
