@@ -99,5 +99,78 @@ public class QuotesOnProducts extends ApplicationPageBase {
         WebElement floddMessage = driver.findElement(By.xpath("/html//div[@id='external_disclaimer_quote_modal']//p[.='You are about to leave geico.com']"));
         return floddMessage;
     }
+    public String getQuoteWithNoZip3(WebElement element) throws InterruptedException {
+        arrow1.click();
+        arrow2.click();
+        element.click();
+        getQoute.click();
+        WebElement errorMessage = driver.findElement(By.id("aria-homepage-zip-alert"));
+        return errorMessage.getText();
+    }
+    public String clickOnIconwithZipCode(WebElement element) throws InterruptedException {
+        element.click();
+        return sendZipCodeKeys("11435");
+    }
+    public String clickOnIconWithoutZipCode(WebElement element) throws InterruptedException {
+        element.click();
+        return clickStartQuote();
+    }
+    public String clickOnIconwithZipCode2(WebElement element) throws InterruptedException {
+        goRight();
+        element.click();
+        return sendZipCodeKeys("11435");
+    }
+    public String clickOnIconWithoutZipCode2(WebElement element)throws InterruptedException{
+        goRight();
+        element.click();
+        return clickStartQuote();
+    }
+    public String clickOnIconwithZipCode3(WebElement element) throws InterruptedException {
+        goDoubleRight();
+        element.click();
+        return sendZipCodeKeys("11435");
+    }
+    public String clickOnIconWithoutZipCode3(WebElement element)throws InterruptedException{
+        goDoubleRight();
+        element.click();
+        return clickStartQuote();
+    }
+    public String clickOnIconWithoutZipCode4(WebElement element)throws InterruptedException{
+        goTripleRight();
+        element.click();
+        return clickStartQuote();
+    }
+
+    public void goRight() throws InterruptedException {
+        arrow1.click();
+        Thread.sleep(1500);
+    }
+    public void goDoubleRight()throws InterruptedException{
+        goRight();
+        arrow3.click();
+        Thread.sleep(1500);
+    }
+    public void goTripleRight()throws InterruptedException{
+        goDoubleRight();
+        arrow3.click();
+        Thread.sleep(1500);
+    }
+    public String clickStartQuote() throws InterruptedException {
+        getQoute.click();
+        Thread.sleep(2000);
+        String url = driver.getCurrentUrl();
+        return url;
+    }
+    public String sendZipCodeKeys(String zipCode) throws InterruptedException {
+        zipCodeTextBox.sendKeys(zipCode);
+        getQoute.click();
+        Thread.sleep(2000);
+        String url = driver.getCurrentUrl();
+        return url;
+    }
+    public String breakString(String url){
+        String[] arr = url.split("S");
+        return arr[0];
+    }
 }
 
