@@ -13,9 +13,14 @@
 
     <test name = "Geico Homepage Test">
         <classes>
-            <class name="homePageTest.SearchFunctionalityTest"/>
-            <class name="homePageTest.FeedbackTest"/>
-            <class name="homePageTest.LandingPageBasicTest"/>
+            <!--<class name="homePageTest.SearchFunctionalityTest"/>-->
+            <!--<class name="homePageTest.FeedbackTest"/>-->
+            <!--<class name="homePageTest.LandingPageBasicTest"/>-->
+            <class name="homePageTest.QuotesOnProductsTest"/>
+            <!--<class name="homePageTest.YourPolicyDDTest"/>-->
+            <!--<class name="homePageTest.InformationDDTest"/>-->
+            <!--<class name="homePageTest.InsuranceDDTest"/>-->
+
         </classes>
     </test>
 </suite>

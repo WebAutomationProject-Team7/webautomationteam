@@ -1,9 +1,11 @@
 package pagebase;
 
 import base.CommonApi;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ApplicationPageBase extends CommonApi {
 
@@ -32,5 +34,12 @@ public class ApplicationPageBase extends CommonApi {
 
     public void typeOnWebElementAndEnter(WebElement webElement, String value) {
         webElement.sendKeys(value, Keys.ENTER);
+    }
+    public   void waitToBeVisible(WebElement element){
+        searchIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+    public void waitToBeVisible(String xpathLocator){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)));
     }
 }
