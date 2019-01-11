@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import reporting.TestLogger;
 
 public class ApplicationPageBase extends CommonApi {
 
@@ -41,5 +42,19 @@ public class ApplicationPageBase extends CommonApi {
     }
     public void waitToBeVisible(String xpathLocator){
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathLocator)));
+    }
+    public static String getTexttoLog(WebElement webElement, String webElementName) {
+
+        TestLogger.log("Getting Text from " + webElementName);
+        String actualText =  webElement.getText();
+        TestLogger.log("Actual text: " + actualText);
+
+        return actualText;
+
+    }
+    public static void clicktoLog(WebElement webElement, String webElementName){
+        TestLogger.log("Click " + webElementName );
+        webElement.click();
+        TestLogger.log("Clicked " + webElementName);
     }
 }
