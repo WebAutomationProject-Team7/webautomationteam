@@ -8,7 +8,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import reporting.TestLogger;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 public class ApplicationPageBase extends CommonApi {
+    Properties prop=null;
 
     @FindBy(name = "OnlineOpinion1")
     public static WebElement feedbackFrame;
@@ -56,5 +63,13 @@ public class ApplicationPageBase extends CommonApi {
         TestLogger.log("Click " + webElementName );
         webElement.click();
         TestLogger.log("Clicked " + webElementName);
+    }
+    public static Properties loadProperties() throws IOException {
+        Properties prop = new Properties();
+        File filepath = new File("C:\\Users\\arifq\\eclipse-workspace\\webautomationteam\\Geico\\src\\test\\Resources\\secret.properties");
+        InputStream ism = new FileInputStream(filepath.getAbsoluteFile());
+        prop.load(ism);
+        ism.close();
+        return prop;
     }
 }

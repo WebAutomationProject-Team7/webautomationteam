@@ -24,7 +24,7 @@ public class SearchTestWithExcelReader extends SearchFunctionality {
         return data;
     }
    @Test(dataProvider = "DP")
-    public void testSearchWithEnter(String keys, String message){
+    public void testSearchWithEnterfromxlsx(String keys, String message){
 
         String messageText=searchWithENTER(keys);
         Assert.assertEquals( message,messageText);
