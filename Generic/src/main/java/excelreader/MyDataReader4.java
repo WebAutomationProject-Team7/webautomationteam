@@ -1,4 +1,4 @@
-package xlsxreader;
+package excelreader;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;

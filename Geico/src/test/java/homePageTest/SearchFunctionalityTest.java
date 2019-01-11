@@ -3,11 +3,7 @@ import homePage.SearchFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import xlsxreader.MyDataReader;
-
-import java.io.File;
 
 public class SearchFunctionalityTest extends SearchFunctionality {
     public String keys = "Property";

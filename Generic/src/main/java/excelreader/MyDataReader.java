@@ -1,4 +1,4 @@
-package xlsxreader;
+package excelreader;
 
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
