@@ -11,7 +11,7 @@
     <modules>
         <module>Cigna</module>
         <module>Generic</module>
-        <module>Dice</module>
+
 
     </modules>
     <dependencyManagement>
