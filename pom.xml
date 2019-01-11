@@ -11,6 +11,8 @@
     <modules>
         <module>Cigna</module>
         <module>Generic</module>
+        <module>Facebook</module>
+        <module>Amazon</module>
 
 
     </modules>
