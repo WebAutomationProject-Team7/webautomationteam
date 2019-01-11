@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
 public class OwnPage extends CommonApi {
+
+
     public OwnPage(){
         PageFactory.initElements (driver,this);
     }
@@ -26,6 +28,12 @@ public class OwnPage extends CommonApi {
     WebElement noThanks;
     @FindBy(css = "#includes-content > div.d-none.d-lg-block > nav:nth-child(2) > div > ul > li:nth-child(2) > a")
     WebElement logintomyCigna;
+    @FindBy(xpath = "//div[@id='includes-content']/div[1]/nav[3]/div/ul/li[1]/a" )
+    WebElement individualFamilies;
+    @FindBy(xpath = "//div[@id=\"includes-content\"]/div/nav[3]/div/ul/li[2]/a")
+    WebElement employersNbrokers;
+    @FindBy(xpath = "//div[@id='includes-content']/div/nav[3]/div/ul/li[3]/a")
+    WebElement healthCareProviders;
 
 
     public String checkContactUs() {
@@ -60,6 +68,30 @@ public class OwnPage extends CommonApi {
         System.out.println(contactUs.getText());
         return text;
     }
+
+    public String checkIndividualFamilies(){
+        individualFamilies.click();
+        String url = driver.getCurrentUrl();
+        System.out.println(url);
+        return url;
+    }
+
+
+    public String checkEmployerNbrokers(){
+        employersNbrokers.click();
+        String url = driver.getCurrentUrl();
+        System.out.println(url);
+        return url;
+    }
+
+
+    public String checkHealthCareProvider(){
+        healthCareProviders.click();
+        String url = driver.getCurrentUrl();
+        System.out.println(url);
+        return url;
+    }
+
 
 
 
