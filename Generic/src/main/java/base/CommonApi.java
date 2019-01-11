@@ -16,7 +16,7 @@ public class CommonApi {
     @Parameters({/*"useCloudEnv","cloudEnvName", */"os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
     public void setUp(/*@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,*/
-                     @Optional("windows") String os, @Optional("10") String os_version, @Optional("firefox") String browserName, @Optional("34")
+                     @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome") String browserName, @Optional("34")
                      String browserVersion, @Optional("www.google.com") String url) throws IOException {
         getLocalDriver(browserName, os);
         wait = new WebDriverWait(driver, 10);
@@ -32,7 +32,7 @@ public class CommonApi {
                 System.setProperty("webdriver.chrome.driver", "C:\\Users\\arifq\\eclipse-workspace\\webautomationpractice\\Generic\\Drivers\\chromedriver.exe");
                 driver = new ChromeDriver();
             } else if (os.equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/drivers/mac/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "../Generic/Drivers/chromedriver");
                 driver = new ChromeDriver();
             }
         } else if (browserName.equalsIgnoreCase("firefox")) {
