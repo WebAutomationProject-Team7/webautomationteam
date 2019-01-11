@@ -74,5 +74,16 @@ public class TestOwnPage extends CommonApi {
         Assert.assertEquals(actual,expect);
     }
 
+    @Test
+    public void checkFindDoctors(){
+        String actual = ownPage.checkFindDoctors();
+        String expect = "https://www.cigna.com/hcpdirectory/";
+        Assert.assertEquals(actual,expect);
+    }
+
+
+
+
+
 }
 

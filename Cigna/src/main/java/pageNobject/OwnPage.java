@@ -17,11 +17,10 @@ public class OwnPage extends CommonApi {
     @FindBy(css = "#includes-content > div.d-none.d-lg-block > nav:nth-child(2) > div > a > svg")
     WebElement logo;
 
-
+    @FindBy(xpath = "//div[@id=\"includes-content\"]/div/nav[2]/div/ul/li[2]/a")
+    public WebElement loginPage;
     @FindBy(xpath = "//div[@id='includes-content']/div[1]/nav[1]/div/ul/li[2]/a")
     public WebElement  contactUs;
-    @FindBy(xpath = "//*[@id='1438512008499']/div/div[4]/div/nav[1]/div/ul[2]/li[2]/a")
-    public WebElement aboutUs;
     @FindBy(css = "#includes-content > div.d-none.d-lg-block > nav.navbar.global-nav.universal-navigation.navbar-expand-lg.navbar-white.bg-white.pt-lg-0 > div > ul > li:nth-child(1) > a")
     public WebElement cignaInternationnal;
     @FindBy(xpath = "//*[@id='oo_no_thanks']")//*[@id="oo_no_thanks"]
@@ -34,6 +33,8 @@ public class OwnPage extends CommonApi {
     WebElement employersNbrokers;
     @FindBy(xpath = "//div[@id='includes-content']/div/nav[3]/div/ul/li[3]/a")
     WebElement healthCareProviders;
+    @FindBy(xpath = "//div[@id=\"includes-content\"]/div/nav[2]/div/ul/li[1]/a")
+    WebElement findDoctors;
 
 
     public String checkContactUs() {
@@ -90,6 +91,23 @@ public class OwnPage extends CommonApi {
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
+    }
+
+    public String checkFindDoctors(){
+        findDoctors.click();
+        String url = driver.getCurrentUrl();
+        System.out.println(url);
+        return url;
+
+    }
+
+    public String checkLoginPage(){
+        loginPage.click();
+        String url = driver.getCurrentUrl();
+        System.out.println();
+        System.out.println(url);
+        return url;
+
     }
 
 
