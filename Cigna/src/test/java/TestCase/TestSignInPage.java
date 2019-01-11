@@ -11,19 +11,19 @@ import pageNobject.SignInPage;
 public class TestSignInPage extends CommonApi {
 
 
-        OwnPage objOfOwnPage;
-        SignInPage objOfSignInPage;
+        OwnPage ownPage;
+        SignInPage signInPage;
 
         @BeforeMethod
         public void initilizationOfObject() {
-            objOfOwnPage = PageFactory.initElements(driver, OwnPage.class);
-            objOfSignInPage = PageFactory.initElements(driver, SignInPage.class);
+            ownPage = PageFactory.initElements(driver, OwnPage.class);
+            signInPage = PageFactory.initElements(driver, SignInPage.class);
         }
 
         @Test(priority = 1, enabled = true)
         public void loginButton() {
-            objOfOwnPage.clickLoginButton();
-            String actualErrorMsg = objOfSignInPage.enterCredintials();
+            //objOfOwnPage.clickLoginButton();
+            String actualErrorMsg = signInPage.enterCredintials();
             String expectedResult = "The ID and password combination you entered does not match our records.";
             Assert.assertTrue(actualErrorMsg.contains(expectedResult));
         }
@@ -31,11 +31,11 @@ public class TestSignInPage extends CommonApi {
         @Test(priority = 1, enabled = true)
         public void regrister1() {
             //PersonalPage pg = PageFactory.initElements(driver, PersonalPage.class);
-            objOfOwnPage.clickLoginButton();
+            ownPage.checkContactUs();
             //LoginPage lp = PageFactory.initElements(driver, LoginPage.class);
-            objOfSignInPage.howToRegrister();
-            objOfSignInPage.registration1();
-            objOfSignInPage.registration2();
+            signInPage.howToRegrister();
+            signInPage.registration1();
+            signInPage.registration2();
         }
     }
 
