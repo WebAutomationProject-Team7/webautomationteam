@@ -74,6 +74,16 @@
                 <artifactId>google-api-services-sheets</artifactId>
                 <version>v4-rev498-1.23.0</version>
             </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>3.6.0-beta1</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.12</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
