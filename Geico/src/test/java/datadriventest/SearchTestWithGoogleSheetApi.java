@@ -1,19 +1,15 @@
 package datadriventest;
-
 import googlesheetapi.GoogleSheetReader;
 import homePage.SearchFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
-
 public class SearchTestWithGoogleSheetApi extends SearchFunctionality {
     SearchFunctionality search=null;
-
     @BeforeMethod
     public void initialisationOfElements(){
         search = PageFactory.initElements(driver,SearchFunctionality.class);

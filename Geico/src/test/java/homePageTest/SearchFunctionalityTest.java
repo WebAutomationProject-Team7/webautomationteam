@@ -4,7 +4,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 public class SearchFunctionalityTest extends SearchFunctionality {
     public String keys = "Property";
     SearchFunctionality search;
@@ -17,7 +16,7 @@ public class SearchFunctionalityTest extends SearchFunctionality {
     public void testSearchWithEnterKey(){
         Assert.assertEquals("Site Search", searchWithENTER(keys));
          }
-     @Test
+         @Test
     public void testSearchWithButton() {
         Assert.assertEquals("Site Search", searchUsingButton(keys));
     }

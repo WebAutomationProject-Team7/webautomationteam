@@ -1,13 +1,9 @@
 package homePageTest;
-
 import homePage.YourPolicyDD;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-
 public class YourPolicyDDTest extends YourPolicyDD {
     YourPolicyDD yourPolicyDD;
     @BeforeMethod

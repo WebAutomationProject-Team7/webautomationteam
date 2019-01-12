@@ -1,13 +1,9 @@
 package homePage;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
-
-import java.util.*;
-
 public class QuotesOnProducts extends ApplicationPageBase {
     @FindBy(id = "validationSummary")
     public static WebElement errorMsg;
@@ -79,8 +75,6 @@ public class QuotesOnProducts extends ApplicationPageBase {
     public static WebElement arrow2;
     @FindBy(css = ".chevron.icon-chevron-right.highlighted")
     public static WebElement arrow3;
-
-
     public String getQuoteWithNoZipP1(WebElement insuranceProduct, WebElement message) {
         insuranceProduct.click();
         getQoute.click();

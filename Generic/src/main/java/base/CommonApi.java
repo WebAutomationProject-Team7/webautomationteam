@@ -13,7 +13,6 @@ import org.testng.annotations.*;
 import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,7 +28,7 @@ public class CommonApi {
     public static WebDriver driver = null;
     public static WebDriverWait wait = null;
 
-    @Parameters({/*"useCloudEnv","cloudEnvName", */"os", "os_version", "browserName", "browserVersion", "url"})
+    @Parameters({/*"useCloudEnv","cloudEnvName",*/ "os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
     public void setUp(/*@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,*/
                      @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome") String browserName, @Optional("34")

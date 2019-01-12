@@ -11,7 +11,6 @@
     <modules>
         <module>Geico</module>
         <module>Generic</module>
-
     </modules>
     <dependencyManagement>
         <dependencies>

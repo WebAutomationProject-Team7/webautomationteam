@@ -8,16 +8,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import reporting.TestLogger;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
 public class ApplicationPageBase extends CommonApi {
     Properties prop=null;
-
     @FindBy(name = "OnlineOpinion1")
     public static WebElement feedbackFrame;
     @FindBy(id="oo_tab")
@@ -30,7 +27,6 @@ public class ApplicationPageBase extends CommonApi {
     public void clearField(WebElement webElement) {
         webElement.clear();
     }
-
     public void clickSubmit(WebElement element){element.click();}
 
     public void navigateBack() {
@@ -40,7 +36,6 @@ public class ApplicationPageBase extends CommonApi {
     public void typeOnWebElement(WebElement webElement, String value) {
         webElement.sendKeys(value);
     }
-
     public void typeOnWebElementAndEnter(WebElement webElement, String value) {
         webElement.sendKeys(value, Keys.ENTER);
     }

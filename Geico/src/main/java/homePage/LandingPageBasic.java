@@ -4,7 +4,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
 public class LandingPageBasic extends ApplicationPageBase {
-
     @FindBy(xpath = "//label[@for='overall_4']")
     public static WebElement verySatisfiedIcon;
     @FindBy(css = "#header-middle-links > a")
@@ -39,7 +38,6 @@ public class LandingPageBasic extends ApplicationPageBase {
     public boolean clickOnInformation() throws InterruptedException {
         informationList.click();
         wait.until(ExpectedConditions.visibilityOf(infoDiv));
-//        Thread.sleep(2000);
         return infoDiv.isDisplayed();
     }
     public String clickOnGeicoLogo() throws InterruptedException{
@@ -50,13 +48,11 @@ public class LandingPageBasic extends ApplicationPageBase {
     public boolean clickOnLocationIcon()throws InterruptedException{
         locationIcon.click();
         wait.until(ExpectedConditions.visibilityOf(locationDiv));
-       // Thread.sleep(2000);
         return locationDiv.isDisplayed();
     }
     public boolean clickLogin() throws InterruptedException{
         login.click();
         wait.until(ExpectedConditions.visibilityOf(loginDiv));
-        //Thread.sleep(2000);
         return loginDiv.isDisplayed();
     }
     public boolean clickOnSearchIcon()throws InterruptedException{
