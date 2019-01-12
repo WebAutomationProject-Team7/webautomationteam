@@ -1,10 +1,12 @@
 package homePage;
+import database.ConnectToSqlDB;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
+import java.util.ArrayList;
+import java.util.List;
 public class SearchFunctionality extends ApplicationPageBase {
     @FindBy(xpath = "//*[@id=\"primary-navigation\"]/div[6]/form/input")
     public static WebElement searchTextBox;
@@ -12,23 +14,44 @@ public class SearchFunctionality extends ApplicationPageBase {
     public static WebElement searchSubmitButton;
     @FindBy(xpath = "//a[@class='search']")
     public static WebElement searchIcon;
-    @FindBy(id = "section1heading")
-    public static WebElement tagLine;
+    @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/h1[1]")
+    public static WebElement searchResultHeadline;
     public   void waitToBeVisible(){
         searchIcon.click();
         wait.until(ExpectedConditions.visibilityOf(searchTextBox));
     }
-    public void searchWithENTER(String searchKeys){
+    public String searchWithENTER(String searchKeys){
         waitToBeVisible();
         clearField(searchTextBox);
         searchTextBox.sendKeys(searchKeys, Keys.ENTER);
-        navigateBack();
+        return searchResultHeadline.getText();
     }
-    public void searchUsingButton(String searchKeys){
+    public String searchUsingButton(String searchKeys){
         waitToBeVisible();
         clearField(searchTextBox);
         searchTextBox.sendKeys(searchKeys);
         searchSubmitButton.click();
-        navigateBack();
+        return searchResultHeadline.getText();
+    }
+    List<String> keyList = new ArrayList<String>();
+    List<String> messageList=new ArrayList<>();
+    public List<String> getSearchKeys(){
+        keyList.add("car");
+        keyList.add("home");
+        keyList.add("property");
+        keyList.add("condo");
+        return keyList;
+    }
+    public List<String> searchfromdatabase() throws Exception {
+        ConnectToSqlDB con=new ConnectToSqlDB();
+        getSearchKeys();
+        con.insertDataFromArrayListToSqlTable(keyList,"SearchItem","SearchKeys");
+        List<String> data = con.readDataBase("SearchItem","SearchKeys");
+        for (String key:data){
+         String messageText=searchWithENTER(key);
+         messageList.add(messageText);
+         navigateBack();
+        }
+        return messageList;
     }
 }

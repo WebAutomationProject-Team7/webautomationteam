@@ -12,7 +12,7 @@ public class LandingPageBasicTest extends LandingPageBasic {
     }
     @Test
     public void testClickInsurance() throws InterruptedException {
-        Assert.assertEquals(true,clickOnInsurance());
+        Assert.assertEquals(clickOnInsurance(),true);
     }
     @Test
     public void testClickInformation() throws InterruptedException {
