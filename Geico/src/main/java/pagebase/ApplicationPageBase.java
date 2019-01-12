@@ -1,6 +1,7 @@
 package pagebase;
 
 import base.CommonApi;
+import org.apache.maven.surefire.shade.org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -71,5 +72,10 @@ public class ApplicationPageBase extends CommonApi {
         prop.load(ism);
         ism.close();
         return prop;
+    }
+    public static String convertToString(String st){
+        String splitString ;
+        splitString = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(st), ' ');
+        return splitString;
     }
 }

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
+import reporting.TestLogger;
+
 public class Feedback extends ApplicationPageBase {
     @FindBy(name = "OnlineOpinion1")
     public static WebElement feedbackFrame;
@@ -38,6 +40,8 @@ public class Feedback extends ApplicationPageBase {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tyMessage")));
     }
     public String getThankYouForFeedbackMessageHeader(WebElement element){
+        //TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+
         giveFeedback(element);
         return ThankYouHeader.getText();
     }
@@ -49,6 +53,5 @@ public class Feedback extends ApplicationPageBase {
         return "Thanks for your feedback!";
     }
     public String getActualThankYouBody(){
-        return "While we research each report we receive, we cannot guarantee that your comment will receive a response.";
-    }
+        return "While we research each report we receive, we cannot guarantee that your comment will receive a response."; }
 }
