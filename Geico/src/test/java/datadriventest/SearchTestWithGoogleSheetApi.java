@@ -18,7 +18,7 @@ public class SearchTestWithGoogleSheetApi extends SearchFunctionality {
     public void initialisationOfElements(){
         search = PageFactory.initElements(driver,SearchFunctionality.class);
     }
-    @Test(enabled = true)
+    @Test
     public void testSearchWithEnterfromSheet() throws IOException {
         Properties properties=loadProperties();
         String spreadSheetId=properties.getProperty("GOOGLE.spreadsheetId");

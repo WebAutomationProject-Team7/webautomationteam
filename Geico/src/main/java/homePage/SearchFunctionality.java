@@ -1,11 +1,12 @@
 package homePage;
+import database.ConnectToSqlDB;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
+import java.util.ArrayList;
+import java.util.List;
 public class SearchFunctionality extends ApplicationPageBase {
     @FindBy(xpath = "//*[@id=\"primary-navigation\"]/div[6]/form/input")
     public static WebElement searchTextBox;
@@ -24,7 +25,6 @@ public class SearchFunctionality extends ApplicationPageBase {
         clearField(searchTextBox);
         searchTextBox.sendKeys(searchKeys, Keys.ENTER);
         return searchResultHeadline.getText();
-
     }
     public String searchUsingButton(String searchKeys){
         waitToBeVisible();
@@ -33,5 +33,25 @@ public class SearchFunctionality extends ApplicationPageBase {
         searchSubmitButton.click();
         return searchResultHeadline.getText();
     }
-
+    List<String> keyList = new ArrayList<String>();
+    List<String> messageList=new ArrayList<>();
+    public List<String> getSearchKeys(){
+        keyList.add("car");
+        keyList.add("home");
+        keyList.add("property");
+        keyList.add("condo");
+        return keyList;
+    }
+    public List<String> searchfromdatabase() throws Exception {
+        ConnectToSqlDB con=new ConnectToSqlDB();
+        getSearchKeys();
+        con.insertDataFromArrayListToSqlTable(keyList,"SearchItem","SearchKeys");
+        List<String> data = con.readDataBase("SearchItem","SearchKeys");
+        for (String key:data){
+         String messageText=searchWithENTER(key);
+         messageList.add(messageText);
+         navigateBack();
+        }
+        return messageList;
+    }
 }

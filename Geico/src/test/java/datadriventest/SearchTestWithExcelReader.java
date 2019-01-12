@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import excelreader.MyDataReader;
 import java.io.File;
 public class SearchTestWithExcelReader extends SearchFunctionality {
-    MyDataReader dr=null;
     SearchFunctionality search=null;
     @BeforeMethod
     public void initialisationOfElements(){
@@ -27,6 +26,6 @@ public class SearchTestWithExcelReader extends SearchFunctionality {
     public void testSearchWithEnterfromxlsx(String keys, String message){
 
         String messageText=searchWithENTER(keys);
-        Assert.assertEquals( message,messageText);
+        Assert.assertEquals( messageText,message);
     }
 }
