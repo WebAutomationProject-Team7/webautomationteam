@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 import pageNobject.OwnPage;
 import pageNobject.SignInPage;
 
+
+
 public class TestOwnPage extends CommonApi {
 
     OwnPage ownPage;
@@ -170,6 +172,14 @@ public class TestOwnPage extends CommonApi {
     public void checkEmployerGroupSolutios() {
         String actual = ownPage.checkEmployerGroupSolutions();
         String expect = "https://www.cigna.com/employers-brokers/plans-services/#filter=plantype/medical-plans/group/all-group-sizes";
+        Assert.assertEquals(actual, expect);
+
+    }
+
+    @Test
+    public void checkMoreAboutConncection() {
+        String actual = ownPage.checkLearnMoreAboutConnection();
+        String expect = "https://www.cigna.com/takecontrol/";
         Assert.assertEquals(actual, expect);
 
     }
