@@ -3,12 +3,18 @@ package search;
 import base.CommonApi;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Logo extends CommonApi {
-    @FindBy(xpath = "//div[text()='Get to Know Us']")
-    public static WebElement getToKnowUsTitle;
+    public Logo(){
+        PageFactory.initElements(driver, this);
+    }
+    @FindBy(xpath = "//a[text()='Careers']")
+    public static WebElement careers;
 
-    public void clickOnGetToKnow() {
-        getToKnowUsTitle.click();
+    public String clickOnCareers() {
+        careers.click();
+        String url = driver.getCurrentUrl();
+        return url;
     }
 }

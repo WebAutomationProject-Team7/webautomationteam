@@ -1,5 +1,6 @@
 package test;
 
+import base.CommonApi;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -9,7 +10,7 @@ import search.Logo;
 
 import java.util.Collections;
 
-public class TestLogo extends Logo {
+public class TestLogo extends CommonApi {
     Logo obj;
     @BeforeMethod
     public void init(){
@@ -17,6 +18,10 @@ public class TestLogo extends Logo {
     }
     @Test
     public void testClickGetToKnowUs() throws InterruptedException{
+        String actual = obj.clickOnCareers();
+        String expect = "https://www.amazon.jobs/en";
+        Assert.assertEquals(actual, expect);
+        //Thread.sleep(2000);
 
 
     }
