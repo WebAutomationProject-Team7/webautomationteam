@@ -14,6 +14,7 @@ public class OwnPage extends CommonApi {
     public OwnPage() {
         PageFactory.initElements(driver, this);
     }
+
     @FindBy(css = "#includes-content > div.d-none.d-lg-block > nav:nth-child(2) > div > a > svg")
     public WebElement logo;
     @FindBy(xpath = "//div[@id=\"includes-content\"]/div/nav[2]/div/ul/li[2]/a")
@@ -65,62 +66,74 @@ public class OwnPage extends CommonApi {
         System.out.println(url);
         return url;
     }
+
     public String cignaInternational() {
         cignaInternationnal.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public boolean logoDisplayed() {
         boolean logoDisplayed = logo.isDisplayed();
         return logoDisplayed;
     }
+
     public String loginUrl() throws InterruptedException {
         logintomyCigna.click();
         Thread.sleep(2000);
         System.out.println(driver.getTitle());
         for (String loginTab : driver.getWindowHandles()) {
+
+
             driver.switchTo().window(loginTab);
         }
         System.out.println(driver.getTitle());
         String url = driver.getCurrentUrl();
         return url;
     }
+
     public String contactUs() {
         String text = contactUs.getText();
         System.out.println(contactUs.getText());
         return text;
     }
+
     public String checkIndividualFamilies() {
         individualFamilies.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkEmployerNbrokers() {
         employersNbrokers.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkHealthCareProvider() {
         healthCareProviders.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkFindDoctors() {
         findDoctors.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkLoginPage() {
         loginPage.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkSearchBox() {
         searchButton.sendKeys("Medical Claim Form");
         searchButton.submit();
@@ -128,66 +141,77 @@ public class OwnPage extends CommonApi {
         System.out.println(url);
         return url;
     }
+
     public String checkMedicalPlanBox() {
         shopMedicalPlanes.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkShopDentalPlans() {
         shopDentalPlans.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkHealthInsuranceTab() {
         healthInsuranceTab.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkMedicareProducts() {
         medicareProducts.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkMedicareSupplementInsurance() {
         medicareSupplementInsurance.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkDentalInsurance() {
         dentalInsurance.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkOtherInsurance() {
         otherInsurance.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkInternationalCoverage() {
         internationalCoverage.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkEmployeePlanNPolicy() {
         employeePlanNPolicy.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkEmployerGroupSolutions() {
         employerGroupSolutions.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
     }
+
     public String checkLearnMoreAboutConnection() {
         learnMoreAboutconnection.click();
         String url = driver.getCurrentUrl();
@@ -197,8 +221,7 @@ public class OwnPage extends CommonApi {
     }
 
 
-
-    }
+}
 
 
 

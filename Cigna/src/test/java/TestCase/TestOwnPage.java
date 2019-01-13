@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 import pageNobject.OwnPage;
 import pageNobject.SignInPage;
 
-
-
 public class TestOwnPage extends CommonApi {
 
     OwnPage ownPage;
@@ -88,103 +86,36 @@ public class TestOwnPage extends CommonApi {
 
 
     @Test
-
-    public void checkSearchButton() {
-        String actual = ownPage.checkSearchBox();
-        String expect = " https://www.cigna.com/search?query=medical%20claim%20form";
+    public void checkLoginPage() {
+        String actual = ownPage.checkLoginPage();
+        String expect = "https://my.cigna.com/web/public/guest/";
 
     }
 
+    @Test
+    public void checkSearchBox() {
+        String actual = ownPage.checkSearchBox();
+        String expect = "https://www.cigna.com/search?query=medical%20claim%20form";
+
+    }
 
     @Test
-    public void checkShopMedicalBox() {
+
+    public void checkMedicalPlanBox() {
         String actual = ownPage.checkMedicalPlanBox();
         String expect = "https://www.cigna.com/medicare/supplemental/?campaign_ID=CSBORG";
 
-
-    }
-
-    @Test
-    public void checkDenatalPlan() {
-        String actual = ownPage.checkShopDentalPlans();
-        String expect = "https://www.cigna.com/individuals-families/plans-services/dental-insurance-plans/";
-        Assert.assertEquals(actual, expect);
-    }
-
-    @Test
-    public void checkHealthInsuranceTab() {
-        String actual = ownPage.checkHealthInsuranceTab();
-        String expect = "https://www.cigna.com/individuals-families/plans-services/health-insurance-plans/";
-        Assert.assertEquals(actual, expect);
-
-    }
-
-    @Test
-
-    public void checkMedicareProducts() {
-        String actual = ownPage.checkMedicareProducts();
-        String expect = "https://www.cigna.com/medicare/";
-
-
-    }
-
-    @Test
-    public void checkMedicareSupplementInsurance() {
-        String actual = ownPage.checkMedicareSupplementInsurance();
-        String expect = "https://www.cigna.com/medicare/supplemental/?campaign_ID=CSBORG";
-
-
-    }
-
-    @Test
-    public void checkDentalInsurance() {
-        String actual = ownPage.checkDentalInsurance();
-        String expect = "https://www.cigna.com/individuals-families/plans-services/dental-insurance-plans/";
-        Assert.assertEquals(actual, expect);
     }
 
 
-    @Test
-    public void checkOtherInsurance() {
-        String actual = ownPage.checkOtherInsurance();
-        String expect = "https://www.cigna.com/individuals-families/plans-services/supplemental/";
-        Assert.assertEquals(actual, expect);
 
 
-    }
-
-    @Test
-    public void checkInternationalCoverage() {
-        String actual = ownPage.checkInternationalCoverage();
-        String expect = "https://www.cigna.com/international/";
-        Assert.assertEquals(actual, expect);
-    }
-
-    @Test
-    public void checkEmployeePlanNPolicy() {
-        String actual = ownPage.checkEmployeePlanNPolicy();
-        String expect = "https://www.cigna.com/individuals-families/plans-services/plans-through-employer/#filter=plantype/medical-plans/";
 
 
-    }
 
-    @Test
-    public void checkEmployerGroupSolutios() {
-        String actual = ownPage.checkEmployerGroupSolutions();
-        String expect = "https://www.cigna.com/employers-brokers/plans-services/#filter=plantype/medical-plans/group/all-group-sizes";
-        Assert.assertEquals(actual, expect);
 
-    }
 
-    @Test
-    public void checkMoreAboutConncection() {
-        String actual = ownPage.checkLearnMoreAboutConnection();
-        String expect = "https://www.cigna.com/takecontrol/";
-        Assert.assertEquals(actual, expect);
-
-    }
 
 }
-
 
 
