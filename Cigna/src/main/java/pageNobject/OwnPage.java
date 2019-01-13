@@ -156,7 +156,7 @@ public class OwnPage extends CommonApi {
         return url;
     }
 
-    public String checkHealthInsuranceTab() {
+    public String checkHealthInsurance() {
         healthInsuranceTab.click();
         String url = driver.getCurrentUrl();
         System.out.println(url);
