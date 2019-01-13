@@ -24,12 +24,12 @@ public class ApplicationPageBase extends CommonApi {
     @FindBy(css = "#header-right-links > ul > li:nth-child(3) > a > span")
     public static WebElement searchIcon;
 
-    public void clearField(WebElement webElement) {
+    public static void clearField(WebElement webElement) {
         webElement.clear();
     }
     public void clickSubmit(WebElement element){element.click();}
 
-    public void navigateBack() {
+    public static void navigateBack() {
         driver.navigate().back();
     }
 

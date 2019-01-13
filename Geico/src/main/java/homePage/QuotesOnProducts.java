@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
+import reporting.TestLogger;
 public class QuotesOnProducts extends ApplicationPageBase {
     @FindBy(id = "validationSummary")
     public static WebElement errorMsg;
@@ -76,12 +77,14 @@ public class QuotesOnProducts extends ApplicationPageBase {
     @FindBy(css = ".chevron.icon-chevron-right.highlighted")
     public static WebElement arrow3;
     public String getQuoteWithNoZipP1(WebElement insuranceProduct, WebElement message) {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         insuranceProduct.click();
         getQoute.click();
         String s = message.getText();
         return s;
     }
     public String getQuoteWithNoZipP2(WebElement insuranceProduct, WebElement message) {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         arrow1.click();
         insuranceProduct.click();
         getQoute.click();
@@ -94,6 +97,7 @@ public class QuotesOnProducts extends ApplicationPageBase {
         return floddMessage;
     }
     public String getQuoteWithNoZip3(WebElement element) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         arrow1.click();
         arrow2.click();
         element.click();
@@ -102,69 +106,77 @@ public class QuotesOnProducts extends ApplicationPageBase {
         return errorMessage.getText();
     }
     public String clickOnIconwithZipCode(WebElement element) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         element.click();
         return sendZipCodeKeys("11435");
     }
     public String clickOnIconWithoutZipCode(WebElement element) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         element.click();
         return clickStartQuote();
     }
     public String clickOnIconwithZipCode2(WebElement element) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         goRight();
         element.click();
         return sendZipCodeKeys("11435");
     }
     public String clickOnIconWithoutZipCode2(WebElement element)throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         goRight();
         element.click();
         return clickStartQuote();
     }
     public String clickOnIconwithZipCode3(WebElement element) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         goDoubleRight();
         element.click();
         return sendZipCodeKeys("11435");
     }
     public String clickOnIconWithoutZipCode3(WebElement element)throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         goDoubleRight();
         element.click();
         return clickStartQuote();
     }
     public String clickOnIconWithoutZipCode4(WebElement element)throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         goTripleRight();
         element.click();
         return clickStartQuote();
     }
 
     public void goRight() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         arrow1.click();
         Thread.sleep(1500);
     }
     public void goDoubleRight()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         goRight();
         arrow3.click();
         Thread.sleep(1500);
     }
     public void goTripleRight()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         goDoubleRight();
         arrow3.click();
         Thread.sleep(1500);
     }
     public String clickStartQuote() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         getQoute.click();
         Thread.sleep(2000);
         String url = driver.getCurrentUrl();
         return url;
     }
     public String sendZipCodeKeys(String zipCode) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         zipCodeTextBox.sendKeys(zipCode);
         getQoute.click();
         Thread.sleep(2000);
         String url = driver.getCurrentUrl();
         return url;
-    }
-    public String breakString(String url){
-        String[] arr = url.split("S");
-        return arr[0];
     }
 }
 

@@ -4,6 +4,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import reporting.TestLogger;
+
 public class QuotesOnProductsTest extends QuotesOnProducts{
     QuotesOnProducts quotesOnProducts;
 
@@ -12,18 +14,22 @@ public class QuotesOnProductsTest extends QuotesOnProducts{
     }
     @Test
     public void getQuoteHomeownersWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Please enter valid Zip Code",getQuoteWithNoZipP1(homeOwnersInsIcon,errorMsg));
     }
     @Test
     public void getQuoteRentersWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Please enter valid Zip Code",getQuoteWithNoZipP1(rentersInsIcon,errorMsg));
     }
     @Test
     public void getQuoteCondoWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Please enter valid Zip Code",getQuoteWithNoZipP1(condoInsIcon,errorMsg));
     }
     @Test//potential bug
     public void getQuoteMotorCycleWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Please enter valid Zip Code",getQuoteWithNoZipP1(motorCycleInsIcon,errorMsg));
     }
     @Test
@@ -32,32 +38,39 @@ public class QuotesOnProductsTest extends QuotesOnProducts{
     }
     @Test
     public void getQuoteUmbrellaWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Don't risk losing everything. Get extra protection from accidents and lawsuits.",getQuoteWithNoZipP1(umbrellaInsIcon,umbrellaMessage));
     }
     @Test
     public void getQuoteRvWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Under Construction",getQuoteWithNoZipP1(rvInsIcon,rvMessage));
     }
     @Test
     public void getQuoteCollectorAutoWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Classic Car Insurance",getQuoteWithNoZipP2(collectorAutoIcon,collectorAutoMessage));
     }
     @Test
     public void getQuoteMobileHomeWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Protect your property with\n" +
                 "mobile home insurance.",getQuoteWithNoZipP2(mobileHomeInsIcon,mobileHMessage));
     }
     @Test
     public void getQuoteFloodWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("",getQuoteWithNoZipP2(floodInsIcon, moveTomodalforFlood()));
 
     }
     @Test
     public void getQuoteCommAutoWithNoZip()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("Which of the following best describes your type of business?",getQuoteWithNoZipP2(commercialAutoIcon,commAutoMessage));
     }
     @Test
     public void testRentersInsurance()throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals("https://propertysales.geico.com/Diva/Conversation",clickOnIconwithZipCode(rentersInsIcon));
     }
     @Test

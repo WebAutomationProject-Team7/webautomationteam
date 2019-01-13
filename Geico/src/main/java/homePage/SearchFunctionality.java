@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
+import reporting.TestLogger;
 import java.util.ArrayList;
 import java.util.List;
 public class SearchFunctionality extends ApplicationPageBase {
@@ -21,12 +22,14 @@ public class SearchFunctionality extends ApplicationPageBase {
         wait.until(ExpectedConditions.visibilityOf(searchTextBox));
     }
     public String searchWithENTER(String searchKeys){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         waitToBeVisible();
         clearField(searchTextBox);
         searchTextBox.sendKeys(searchKeys, Keys.ENTER);
         return searchResultHeadline.getText();
     }
     public String searchUsingButton(String searchKeys){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         waitToBeVisible();
         clearField(searchTextBox);
         searchTextBox.sendKeys(searchKeys);
@@ -43,6 +46,7 @@ public class SearchFunctionality extends ApplicationPageBase {
         return keyList;
     }
     public List<String> searchfromdatabase() throws Exception {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         ConnectToSqlDB con=new ConnectToSqlDB();
         getSearchKeys();
         con.insertDataFromArrayListToSqlTable(keyList,"SearchItem","SearchKeys");

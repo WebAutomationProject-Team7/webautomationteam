@@ -6,6 +6,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import excelreader.MyDataReader;
+import reporting.TestLogger;
+
 import java.io.File;
 public class SearchTestWithExcelReader extends SearchFunctionality {
     SearchFunctionality search=null;
@@ -24,8 +26,8 @@ public class SearchTestWithExcelReader extends SearchFunctionality {
     }
    @Test(dataProvider = "DP")
     public void testSearchWithEnterfromxlsx(String keys, String message){
-
-        String messageText=searchWithENTER(keys);
+       TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+       String messageText=searchWithENTER(keys);
         Assert.assertEquals( messageText,message);
     }
 }

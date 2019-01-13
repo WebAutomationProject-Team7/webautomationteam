@@ -1,10 +1,9 @@
-package LoginPage;
+package homePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Test;
 import pagebase.ApplicationPageBase;
-
-public class LoginPageOnHomePage extends ApplicationPageBase {
+import reporting.TestLogger;
+public class LoginFunctionality extends ApplicationPageBase {
     @FindBy(xpath = "//div[@id='header-right-links']/ul[1]/li[2]/a[@href='#']")
     public static WebElement login;
     @FindBy(id="LOGIN_policyNo")
@@ -15,12 +14,18 @@ public class LoginPageOnHomePage extends ApplicationPageBase {
     public static WebElement rememberMeCheckBox;
     @FindBy(id="manageSubmit")
     public static WebElement loginSubmitButton;
-
-    public static void userLogin(){
+    @FindBy(id="userPassword-msgs")
+    public static WebElement loginErrorMessage;
+    public  String  userLogin(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         login.click();
-        user_ID.sendKeys("kjsbckbks");
-        password.sendKeys("djbjs");
+        user_ID.sendKeys("wrong@gmail.com");
+        password.sendKeys("wrongpassword");
         rememberMeCheckBox.click();
         loginSubmitButton.click();
+        navigateBack();
+        clearField(user_ID);
+        clearField(password);
+        return loginErrorMessage.getText();
     }
 }
