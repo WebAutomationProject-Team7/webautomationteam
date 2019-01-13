@@ -15,7 +15,7 @@
         <classes>
 
             <!--<class name="TestCase.TestSignInPage"/>-->
-            <class name="TestCase.TestOwnPage"/>
+            <class name="TestCase.TestHomePage"/>
 
 
         </classes>

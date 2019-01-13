@@ -11,8 +11,6 @@ import org.testng.Assert;
 import java.util.concurrent.TimeUnit;
 
 public class SignInPage extends CommonApi {
-
-
         @FindBy(id = "username")
         public static WebElement username;
         @FindBy(id = "password")
@@ -51,8 +49,6 @@ public class SignInPage extends CommonApi {
         public static WebElement zipcode;
         @FindBy(name = "_eventId_next")
         public static WebElement next;
-
-        //to work on the newly opened page
         public String enterCredintials() {
             for (String handle : driver.getWindowHandles()) {
                 driver.switchTo().window(handle);
@@ -65,7 +61,6 @@ public class SignInPage extends CommonApi {
             String actualErrorMsg = errorMsg.getText();
             return actualErrorMsg;
         }
-
         public void howToRegrister() {
             for (String handle : driver.getWindowHandles()) {
                 driver.switchTo().window(handle);
@@ -75,7 +70,6 @@ public class SignInPage extends CommonApi {
             regNow.click();
             Assert.assertTrue(driver.findElement(By.xpath(".//*[@id='top']")).isDisplayed(), "Registration ");
         }
-
         public void registration1() {
             Select dropdownMonth = new Select(month);
             Select dropdownDay = new Select(day);
@@ -87,29 +81,28 @@ public class SignInPage extends CommonApi {
             }
             try {
                 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-                firstName.sendKeys("Alistair");
-                lastName.sendKeys("Mendes");
+                firstName.sendKeys("Salma");
+                lastName.sendKeys("Alam");
                 dropdownMonth.selectByIndex(4);
                 dropdownDay.selectByIndex(9);
                 dropdownYear.selectByIndex(16);
-                address.sendKeys("2011 Hamptons Avenue");
+                address.sendKeys("3923 Woodside");
                 city.sendKeys("New York");
                 dropdownState.selectByIndex(35);
-                zip.sendKeys("11111");
+                zip.sendKeys("11377");
                 button.click();
             } catch (Exception e) {
                 System.out.println("Not Available");
                 e.printStackTrace();
             }
         }
-
         public void registration2() {
             for (String handle : driver.getWindowHandles()) {
                 driver.switchTo().window(handle);
             }
             try {
-                ssn.sendKeys("266433665");
-                zipcode.sendKeys("11111");
+                ssn.sendKeys("12121212");
+                zipcode.sendKeys("11355");
                 next.click();
                 Assert.assertTrue(driver.findElement(By.xpath(".//*[@id='main-contentWrapper']/div/div/div/section/div[1]/p")).isDisplayed(), "We're having trouble locating your information. Please recheck the info you entered. If it's correct and you are a Cigna customer with current coverage, living in the U.S., please call Customer Service at 800-853-2713 for assistance with registration. Cigna-HealthSpring customers call 855-216-4365. ");
             } catch (Exception e) {

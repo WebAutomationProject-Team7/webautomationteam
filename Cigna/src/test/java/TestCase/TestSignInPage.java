@@ -5,18 +5,18 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageNobject.OwnPage;
+import pageNobject.HomePage;
 import pageNobject.SignInPage;
 
 public class TestSignInPage extends CommonApi {
 
 
-        OwnPage ownPage;
+        HomePage ownPage;
         SignInPage signInPage;
 
         @BeforeMethod
         public void initilizationOfObject() {
-            ownPage = PageFactory.initElements(driver, OwnPage.class);
+            ownPage = PageFactory.initElements(driver, HomePage.class);
             signInPage = PageFactory.initElements(driver, SignInPage.class);
         }
 

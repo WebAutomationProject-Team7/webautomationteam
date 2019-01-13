@@ -9,9 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 
-public class OwnPage extends CommonApi {
+public class HomePage extends CommonApi {
 
-    public OwnPage() {
+    public HomePage() {
         PageFactory.initElements(driver, this);
     }
 
