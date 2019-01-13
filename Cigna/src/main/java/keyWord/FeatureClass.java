@@ -12,21 +12,17 @@ public class FeatureClass extends CommonApi {
 
     SignInPage signInPage = PageFactory.initElements(driver, SignInPage.class);
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-
     public void Login() {
         signInPage.enterCredintials();
     }
-
     public void Regristration() {
         signInPage.registration1();
         signInPage.registration2();
     }
-
     public void searchProduct() {
         homePage.checkSearchBox();
         System.out.println("Search");
     }
-
     public void selectAction(String featureName) throws IOException {
         switch (featureName) {
             case "Login":

@@ -17,35 +17,29 @@ public class TestHomePage extends HomePage {
         homePage = PageFactory.initElements(driver, HomePage.class);
         signInPage = PageFactory.initElements(driver, SignInPage.class);
     }
-
-
     @Test
     public void contactUsButton() {
         String actual = homePage.checkContactUs();
         String expect = "https://www.cigna.com/about-us/contact-us/";
         Assert.assertEquals(actual, expect);
     }
-
     @Test
     public void cignaInternationalTab() {
         String actual = homePage.cignaInternational();
         String expect = "https://www.cigna.com/international/";
         Assert.assertEquals(actual, expect);
     }
-
     @Test
     public void logoDisplayedcheck() {
         boolean actual = homePage.logoDisplayed();
         Assert.assertTrue(actual);
     }
-
     @Test
     public void yTubeLinkTest() throws InterruptedException {
         String actual = homePage.loginUrl();
         String expected = "https://my.cigna.com/web/public/guest";
         Assert.assertEquals(actual, expected);
     }
-
     @Test
     public void contactUstab() {
         String actual = homePage.contactUs();
@@ -53,9 +47,7 @@ public class TestHomePage extends HomePage {
         Assert.assertEquals(actual, expect);
 
     }
-
     @Test
-
     public void checkIndividualFamiliesTab() {
         String actual = homePage.checkIndividualFamilies();
         String expect = "https://www.cigna.com/individuals-families/";
@@ -68,52 +60,42 @@ public class TestHomePage extends HomePage {
         String expect = "https://www.cigna.com/employers-brokers/";
         Assert.assertEquals(actual, expect);
     }
-
     @Test
     public void checkHealthCareProviders() {
         String actual = homePage.checkHealthCareProvider();
         String expect = "https://www.cigna.com/health-care-providers/";
         Assert.assertEquals(actual, expect);
     }
-
     @Test
     public void checkFindDoctorsTab() {
         String actual = homePage.checkFindDoctors();
         String expect = "https://www.cigna.com/hcpdirectory/";
         Assert.assertEquals(actual, expect);
     }
-
-
     @Test
     public void checkLoginPageTab() {
         String actual = homePage.checkLoginPage();
         String expect = "https://my.cigna.com/web/public/guest/";
 
     }
-
     @Test
     public void checkSearchBoxTab() {
         String actual = homePage.checkSearchBox();
         String expect = "https://www.cigna.com/search?query=medical%20claim%20form";
-
     }
-
     @Test
 
     public void checkMedicalPlanTab() {
         String actual = homePage.checkMedicalPlanBox();
         String expect = "https://www.cigna.com/medicare/supplemental/?campaign_ID=CSBORG";
-
     }
-@Test
+   @Test
     public void checkShopDentalPlanTab() {
         String actual = homePage.checkShopDentalPlans();
         String expect = "https://www.cigna.com/individuals-families/plans-services/dental-insurance-plans/";
         Assert.assertEquals(actual, expect);
-
-
     }
-@Test
+   @Test
     public void checkHealthInsuranceTab() {
         String actual = homePage.checkHealthInsurance();
         String expect = "https://www.cigna.com/individuals-families/plans-services/health-insurance-plans/";
@@ -121,14 +103,14 @@ public class TestHomePage extends HomePage {
 
 
     }
-@Test
+   @Test
     public void checkMedicareProductsTab() {
         String actual = homePage.checkMedicareProducts();
         String expect = "https://www.cigna.com/medicare/";
 
     }
 
-@Test
+   @Test
     public void checkMedicareSupplementInsuranceTab() {
         String actual = homePage.checkMedicareSupplementInsurance();
         String expect = "https://www.cigna.com/individuals-families/plans-services/supplemental/";

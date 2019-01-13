@@ -66,7 +66,7 @@ public class SignInPage extends CommonApi {
                 driver.switchTo().window(handle);
             }
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            how2Regrister.click();
+            //how2Regrister.click();
             regNow.click();
             Assert.assertTrue(driver.findElement(By.xpath(".//*[@id='top']")).isDisplayed(), "Registration ");
         }
