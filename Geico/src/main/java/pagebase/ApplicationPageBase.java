@@ -144,6 +144,14 @@ public class ApplicationPageBase extends CommonApi {
         String st = driver.findElement(By.cssSelector(locator)).getText();
         return st;
     }
+    public static String getCurrentURLByCssFromNewWindow(String locator) throws InterruptedException {
+        WebElement element=driver.findElement(By.cssSelector(locator));
+        element.click();
+        handleNewTab(driver);
+        Thread.sleep(1000);
+        String url=driver.getCurrentUrl();
+        return url;
+    }
     public String getTextByXpath(String locator){
         String st = driver.findElement(By.xpath(locator)).getText();
         return st;
@@ -258,6 +266,7 @@ public class ApplicationPageBase extends CommonApi {
         List<String> newTabs = new ArrayList<String>(driver1.getWindowHandles());
         newTabs.remove(oldTab);
         driver1.switchTo().window(newTabs.get(0));
+
         return driver1;
     }
     public static boolean isPopUpWindowDisplayed(WebDriver driver1, String locator){
