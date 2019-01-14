@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends CommonApi {
+public class HomePageTab extends CommonApi {
 
-    public HomePage() {
+    public HomePageTab() {
         PageFactory.initElements(driver, this);
     }
 
@@ -32,14 +32,14 @@ public class HomePage extends CommonApi {
     public static WebElement dropDownMenu;
 
     public static void setDropDownMenu(WebElement dropDownMenu) {
-        HomePage.dropDownMenu = dropDownMenu;
+        HomePageTab.dropDownMenu = dropDownMenu;
         dropDownMenu.click();
     }
     @FindBy(xpath = "//a[@id='nav-hamburger-menu']")
     public static WebElement hamburgerMenu;
 
     public static void setHamburgerMenu(WebElement hamburgerMenu){
-        HomePage.hamburgerMenu = hamburgerMenu;
+        HomePageTab.hamburgerMenu = hamburgerMenu;
         hamburgerMenu.click();
 
     }
@@ -47,14 +47,14 @@ public class HomePage extends CommonApi {
     public static WebElement yourAmazonDotComNavBar;
 
     public static void setYourAmazonDotComNavBar(WebElement yourAmazonDotComNavBar){
-        HomePage.yourAmazonDotComNavBar = yourAmazonDotComNavBar;
+        HomePageTab.yourAmazonDotComNavBar = yourAmazonDotComNavBar;
         yourAmazonDotComNavBar.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[2]")
     public static WebElement TodayDeals;
 
     public static void setTodayDeals(WebElement TodayDeals){
-        HomePage.TodayDeals = TodayDeals;
+        HomePageTab.TodayDeals = TodayDeals;
         TodayDeals.click();
 
     }
@@ -62,35 +62,35 @@ public class HomePage extends CommonApi {
     public static WebElement GiftCards;
 
     public static void setGiftCards(WebElement GiftCards){
-        HomePage.GiftCards = GiftCards;
+        HomePageTab.GiftCards = GiftCards;
         GiftCards.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[4]")
     public static WebElement WholeFoods;
 
     public static void setWholeFoods(WebElement WholeFoods){
-        HomePage.WholeFoods = WholeFoods;
+        HomePageTab.WholeFoods = WholeFoods;
         WholeFoods.click();
     }
     @FindBy(xpath ="//*[@id='nav-xshop']/a[5]")
     public static WebElement Registry;
 
     public static void setRegistry(WebElement Registry){
-        HomePage.Registry = Registry;
+        HomePageTab.Registry = Registry;
         Registry.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[6]")
     public static WebElement Sell;
 
     public void setSell(WebElement Sell){
-        HomePage.Sell = Sell;
+        HomePageTab.Sell = Sell;
         Sell.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[7]")
     public static WebElement Help;
 
     public void setHelp(WebElement Help){
-        HomePage.Help = Help;
+        HomePageTab.Help = Help;
         Help.click();
 
     }

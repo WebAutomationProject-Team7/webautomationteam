@@ -4,15 +4,15 @@ import com.relevantcodes.extentreports.ExtentReports;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.HomePage;
+import pages.HomePageTab;
 import reporting.ExtentManager;
 
-public class HomePageTabTest extends HomePage {
-    HomePage homePage;
+public class HomePageTabTest extends HomePageTab {
+    HomePageTab homePage;
     ExtentReports reports;
     @BeforeMethod
     public void setUp(){
-        this.homePage = new HomePage();
+        this.homePage = new HomePageTab();
         reports = ExtentManager.getInstance();
     }
     @Test
