@@ -98,7 +98,7 @@ public class CommonApi {
 //            }
 //        }
 //
-//        return driver;
+//       return driver;
 //    }
 //
 //    public WebDriver getCloudDriver(String envName, String envUsername, String envAccessKey, String os, String os_version, String browserName,

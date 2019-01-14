@@ -40,7 +40,7 @@ public class ApplicationPageBase extends CommonApi {
         webElement.sendKeys(value, Keys.ENTER);
     }
     public   void waitToBeVisible(WebElement element){
-        searchIcon.click();
+        element.click();
         wait.until(ExpectedConditions.visibilityOf(element));
     }
     public void waitToBeVisible(String xpathLocator){
