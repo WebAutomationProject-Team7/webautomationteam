@@ -13,14 +13,9 @@
 
     <test name = "Amazon Test">
         <classes>
-            <class name="test.TestCookBook"/>
-            <class name="test.TestDropDownMenu"/>
-            <class name="test.TestHamburgerMenu"/>
-            <class name="test.TestHomePage"/>
-            <class name="test.TestLoginPage"/>
-            <class name="test.TestLogo"/>
-            <class name="test.TestOrderBar"/>
-            <class name="test.TestSearchBox"/>
+            <class name="test.HomePageTabTest"/>
+
+
 
         </classes>
     </test>
