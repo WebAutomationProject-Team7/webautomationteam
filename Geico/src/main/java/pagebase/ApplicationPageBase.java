@@ -81,7 +81,7 @@ public class ApplicationPageBase extends CommonApi {
         try {
             driver.findElement(By.cssSelector(locator)).sendKeys(value);
         }catch (Exception ex){
-            //driver.findElement(By.id(locator)).sendKeys(value);
+            driver.findElement(By.id(locator)).sendKeys(value);
         }
 
     }
