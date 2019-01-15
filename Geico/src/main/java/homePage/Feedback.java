@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
-import reporting.TestLogger;
 
 public class Feedback extends ApplicationPageBase {
     @FindBy(name = "OnlineOpinion1")
@@ -41,6 +40,7 @@ public class Feedback extends ApplicationPageBase {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tyMessage")));
     }
     public String getThankYouForFeedbackMessageHeader(WebElement element){
+
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         giveFeedback(element);
         return ThankYouHeader.getText();
