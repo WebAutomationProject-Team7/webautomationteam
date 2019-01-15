@@ -3,8 +3,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pagebase.ApplicationPageBase;
-public class LandingPageBasic extends ApplicationPageBase {
+import reporting.TestLogger;
 
+public class LandingPageBasic extends ApplicationPageBase {
     @FindBy(xpath = "//label[@for='overall_4']")
     public static WebElement verySatisfiedIcon;
     @FindBy(css = "#header-middle-links > a")
@@ -29,43 +30,45 @@ public class LandingPageBasic extends ApplicationPageBase {
     public static WebElement locationDiv;
     @FindBy(xpath = "//div[@data-side-panel='search']")
     public static WebElement searchDiv;
-
-
     public boolean clickOnInsurance() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         insuranceList.click();
         wait.until(ExpectedConditions.visibilityOf(insuranceDiv));
         return insuranceDiv.isDisplayed();
     }
-    public boolean clickOnInformation() throws InterruptedException {
+    public boolean clickOnInformation()throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         informationList.click();
         wait.until(ExpectedConditions.visibilityOf(infoDiv));
-//        Thread.sleep(2000);
         return infoDiv.isDisplayed();
     }
     public String clickOnGeicoLogo() throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Logo.click();
         String Url = driver.getCurrentUrl();
         return Url;
     }
     public boolean clickOnLocationIcon()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         locationIcon.click();
         wait.until(ExpectedConditions.visibilityOf(locationDiv));
-       // Thread.sleep(2000);
         return locationDiv.isDisplayed();
     }
     public boolean clickLogin() throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         login.click();
         wait.until(ExpectedConditions.visibilityOf(loginDiv));
-        //Thread.sleep(2000);
         return loginDiv.isDisplayed();
     }
     public boolean clickOnSearchIcon()throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         searchIcon.click();
         wait.until(ExpectedConditions.visibilityOf(searchDiv));
 
         return searchDiv.isDisplayed();
     }
     public boolean clickOnFeedBackIcon() throws InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         feedbackIcon.click();
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(feedbackFrame));
         return verySatisfiedIcon.isDisplayed();

@@ -17,42 +17,52 @@ public class FeedbackTest extends Feedback {
     }
     @Test
     public void testVeryDissatisfiedHeaderMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouHeader(), getThankYouForFeedbackMessageHeader(veryDissatisfiedIcon));
     }
     @Test
     public void testVeryDissatisfiedBodyMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouBody(), getThankYouForFeedbackMessageBody(veryDissatisfiedIcon));
     }
     @Test
     public void testDissatisfiedHeaderMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouHeader(), getThankYouForFeedbackMessageHeader(dissatisfiedIcon));
     }
     @Test
     public void testDissatisfiedBodyMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouBody(), getThankYouForFeedbackMessageBody(dissatisfiedIcon));
     }
     @Test
     public void testSomewhatSatisfiedHeaderMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouHeader(), getThankYouForFeedbackMessageHeader(somewhatSatisfiedIcon));
     }
     @Test
     public void testSomewhatSatisfiedBodyMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouBody(), getThankYouForFeedbackMessageBody(somewhatSatisfiedIcon));
     }
     @Test
     public void testSatisfiedHeaderMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouHeader(), getThankYouForFeedbackMessageHeader(satisfiedIcon));
     }
     @Test
     public void testSatisfiedBodyMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouBody(), getThankYouForFeedbackMessageBody(satisfiedIcon));
     }
     @Test
     public void testVerySatisfiedHeaderMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouHeader(), getThankYouForFeedbackMessageHeader(verySatisfiedIcon));
     }
     @Test
     public void testVerySatisfiedBodyMessage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         Assert.assertEquals(getActualThankYouBody(), getThankYouForFeedbackMessageBody(verySatisfiedIcon));
     }
 }
