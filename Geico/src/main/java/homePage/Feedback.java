@@ -34,18 +34,19 @@ public class Feedback extends ApplicationPageBase {
         element.click();
     }
     public void giveFeedback(WebElement element){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         switchToFrame();
         selectSatisfactionIcon(element);
         clickSubmit(submitButton);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("tyMessage")));
     }
     public String getThankYouForFeedbackMessageHeader(WebElement element){
-        //TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         giveFeedback(element);
         return ThankYouHeader.getText();
     }
     public String getThankYouForFeedbackMessageBody(WebElement element){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         giveFeedback(element);
         return ThankYouBody.getText();
     }

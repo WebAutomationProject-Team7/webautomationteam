@@ -3,6 +3,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pagebase.ApplicationPageBase;
+import reporting.TestLogger;
+
 import java.util.ArrayList;
 import java.util.List;
 public class InformationDD extends ApplicationPageBase {
@@ -17,6 +19,7 @@ public class InformationDD extends ApplicationPageBase {
         return listA;
     }
     public List<String> getInformationMenuList(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         information.click();
         List<WebElement> listB = getMenuList(informationPath,infoElementsPath);
         List<String> text = new ArrayList<>();
