@@ -9,8 +9,11 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Geico</module>
+        <module>Cigna</module>
         <module>Generic</module>
+        <module>Facebook</module>
+        <module>Amazon</module>
+
     </modules>
     <dependencyManagement>
         <dependencies>
