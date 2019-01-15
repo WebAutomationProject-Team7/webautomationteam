@@ -13,6 +13,7 @@
         <module>Generic</module>
         <module>Facebook</module>
         <module>Amazon</module>
+        <module>Geico</module>
 
     </modules>
     <dependencyManagement>
