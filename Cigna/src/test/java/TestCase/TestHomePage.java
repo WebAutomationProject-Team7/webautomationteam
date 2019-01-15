@@ -1,5 +1,6 @@
 package TestCase;
 
+import database.ConnectToSqlDB;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -7,7 +8,10 @@ import org.testng.annotations.Test;
 import pageNobject.HomePage;
 import pageNobject.SignInPage;
 
+import java.sql.SQLException;
+
 public class TestHomePage extends HomePage {
+
 
     HomePage homePage;
     SignInPage signInPage;
@@ -16,19 +20,26 @@ public class TestHomePage extends HomePage {
     public void initilizationOfObject() {
         homePage = PageFactory.initElements(driver, HomePage.class);
         signInPage = PageFactory.initElements(driver, SignInPage.class);
+
+
     }
+
     @Test
+    public void cignaInternationalTab() throws Exception, SQLException {
+        ConnectToSqlDB con = new ConnectToSqlDB();
+        con.connectToSqlDatabase();
+        String actual = homePage.cignaInternational();
+        String expect = "https://www.cigna.com/international/";
+        Assert.assertEquals(actual, expect);
+    }
+
+   /* @Test
     public void contactUsButton() {
         String actual = homePage.checkContactUs();
         String expect = "https://www.cigna.com/about-us/contact-us/";
         Assert.assertEquals(actual, expect);
     }
-    @Test
-    public void cignaInternationalTab() {
-        String actual = homePage.cignaInternational();
-        String expect = "https://www.cigna.com/international/";
-        Assert.assertEquals(actual, expect);
-    }
+
     @Test
     public void logoDisplayedcheck() {
         boolean actual = homePage.logoDisplayed();
@@ -159,7 +170,7 @@ public class TestHomePage extends HomePage {
         Assert.assertEquals(actual, expect);
 
 
-    }
+    }*/
 }
 
 
