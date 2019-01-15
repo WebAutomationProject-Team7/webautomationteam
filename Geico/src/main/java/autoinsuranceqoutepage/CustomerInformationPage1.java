@@ -25,7 +25,7 @@ public class CustomerInformationPage1 extends QuotesOnProducts {
         autoInsIcon.click();
         zipCodeTextBox.sendKeys("11432");
         getQoute.click();
-    }
+    }//iframe handling
     public void clickSkip(){
         waitToBeVisible(skipButton);
         skipButton.click();
