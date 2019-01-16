@@ -20,12 +20,12 @@ public class TestOwnPage extends CommonApi {
     }
 
 
-     @Test
-   public void contactUsButton(){
-        String actual= ownPage.checkContactUs();
-       String expect= "https://www.cigna.com/about-us/contact-us/";
-         Assert.assertEquals(actual,expect);
-     }
+//     @Test
+//   public void contactUsButton(){
+//        String actual= ownPage.checkContactUs();
+//       String expect= "https://www.cigna.com/about-us/contact-us/";
+//         Assert.assertEquals(actual,expect);
+//     }
 
     @Test
     public void cignaInternational(){
