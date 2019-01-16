@@ -28,12 +28,12 @@ public class LoginPage extends CommonApi {
     @FindBy(id = "pass")
     WebElement password;
 
-//    public String validateLoginPageTitle() {
-//        username.sendKeys("miah_monir@yahooo.com");
-//        password.sendKeys("rahimam12");
-//
-//        return driver.getTitle();
-//    }
+    public String validateLoginPageTitle() {
+        username.sendKeys("miah_monir@yahooo.com");
+        password.sendKeys("rahimam12");
+
+        return driver.getTitle();
+    }
 
 
 
