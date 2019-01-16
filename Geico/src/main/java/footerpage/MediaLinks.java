@@ -8,10 +8,10 @@ public class MediaLinks extends ApplicationPageBase {
         String url=getCurrentURLByCssFromNewWindow(".icon-facebook");
         return url;
     }
-    public  String clickOnTwitter() throws InterruptedException {
-        String url=getCurrentURLByCssFromNewWindow(".icon-twitter ");
-        return url;
-    }
+//    public  String clickOnTwitter() throws InterruptedException {
+//        String url=getCurrentURLByCssFromNewWindow(".icon-twitter ");
+//        return url;
+//    }
     public  String clickOnInstagram() throws InterruptedException {
         String url=getCurrentURLByCssFromNewWindow(".icon-instagram ");
         return url;
