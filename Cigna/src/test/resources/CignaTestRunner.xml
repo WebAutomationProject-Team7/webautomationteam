@@ -16,6 +16,7 @@
 
             <!--<class name="TestCase.TestSignInPage"/>-->
             <class name="TestCase.TestHomePage"/>
+            <class name="TestCase.TestSearchOption"/>
 
 
         </classes>

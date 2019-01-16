@@ -33,7 +33,7 @@ public class TestHomePage extends HomePage {
         Assert.assertEquals(actual, expect);
     }
 
-   /* @Test
+    @Test
     public void contactUsButton() {
         String actual = homePage.checkContactUs();
         String expect = "https://www.cigna.com/about-us/contact-us/";
@@ -170,7 +170,7 @@ public class TestHomePage extends HomePage {
         Assert.assertEquals(actual, expect);
 
 
-    }*/
+    }
 }
 
 
