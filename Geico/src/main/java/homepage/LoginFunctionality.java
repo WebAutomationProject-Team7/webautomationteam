@@ -1,4 +1,4 @@
-package homePage;
+package homepage;
 import database.ConnectToSqlDB;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

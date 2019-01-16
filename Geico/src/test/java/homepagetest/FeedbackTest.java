@@ -1,5 +1,5 @@
-package homePageTest;
-import homePage.Feedback;
+package homepagetest;
+import homepage.Feedback;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;

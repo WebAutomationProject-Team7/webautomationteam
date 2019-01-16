@@ -1,5 +1,5 @@
-package homePageTest;
-import homePage.QuotesOnProducts;
+package homepagetest;
+import homepage.QuotesOnProducts;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

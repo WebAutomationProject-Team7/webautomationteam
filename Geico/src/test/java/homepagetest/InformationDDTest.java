@@ -1,23 +1,20 @@
-package homePageTest;
-import homePage.InsuranceDD;
+package homepagetest;
+import homepage.InformationDD;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import reporting.TestLogger;
-
-public class InsuranceDDTest extends InsuranceDD {
-    InsuranceDD insuranceDD;
+public class InformationDDTest extends InformationDD {
+    InformationDD informationDD;
     @BeforeMethod
     public void init(){
-        insuranceDD = PageFactory.initElements(driver, InsuranceDD.class);
+        informationDD = PageFactory.initElements(driver, InformationDD.class);
     }
     @Test
     public void testInformationMenuItems() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        String s = String.join(", ",getInsuranceMenuList());
-        System.out.println(s);
-        Assert.assertEquals("Vehicle Insurance, Property Insurance, Business Insurance, Additional Insurance", s);
+        String s = String.join(", ",getInformationMenuList());
+        Assert.assertEquals(s,"My Account, Claims and Incidents, Tools and Resources, About GEICO, Web and Mobile, Contact Us");
     }
-
 }

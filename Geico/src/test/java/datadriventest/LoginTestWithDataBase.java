@@ -1,6 +1,6 @@
 package datadriventest;
 
-import homePage.LoginFunctionality;
+import homepage.LoginFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

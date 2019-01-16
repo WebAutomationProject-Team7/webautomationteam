@@ -1,5 +1,5 @@
-package homePageTest;
-import homePage.SearchFunctionality;
+package homepagetest;
+import homepage.SearchFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -16,12 +16,12 @@ public class SearchFunctionalityTest extends SearchFunctionality {
     @Test
     public void testSearchWithEnterKey(){
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals("Site Search", searchWithENTER(keys));
+        Assert.assertEquals( searchWithENTER(keys),"Site Search");
          }
          @Test
     public void testSearchWithButton() {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals("Site Search", searchUsingButton(keys));
+        Assert.assertEquals(searchUsingButton(keys),"Site Search");
     }
 
 

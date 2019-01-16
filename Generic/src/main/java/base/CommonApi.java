@@ -139,6 +139,12 @@ public class CommonApi {
 
     public WebDriver getLocalDriver(String browserName, String os) {
         if (browserName.equalsIgnoreCase("chrome")) {
+            ChromeOptions options =new ChromeOptions();
+            options.addArguments("--start-maximized");
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--incognito");
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             if (os.equalsIgnoreCase("windows")) {
                 System.setProperty("webdriver.chrome.driver", "..\\Generic\\Drivers\\chromedriver.exe");
                 driver = new ChromeDriver();

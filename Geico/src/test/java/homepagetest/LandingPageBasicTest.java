@@ -1,5 +1,5 @@
-package homePageTest;
-import homePage.LandingPageBasic;
+package homepagetest;
+import homepage.LandingPageBasic;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -20,12 +20,12 @@ public class LandingPageBasicTest extends LandingPageBasic {
     @Test
     public void testClickInformation() throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals(true,clickOnInformation());
+        Assert.assertEquals(clickOnInformation(),true);
     }
     @Test
     public void testClickLocation()throws InterruptedException {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals(true,clickOnLocationIcon());
+        Assert.assertEquals(clickOnLocationIcon(),true);
     }
     @Test
     public void testClickLogin()throws InterruptedException{
@@ -35,17 +35,17 @@ public class LandingPageBasicTest extends LandingPageBasic {
     @Test
     public void testClickSearchIcon()throws InterruptedException{
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals(true,clickOnSearchIcon());
+        Assert.assertEquals(clickOnSearchIcon(),true);
     }
     @Test
     public void testClickOnGeicoLogo()throws InterruptedException{
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals("https://www.geico.com/",clickOnGeicoLogo());
+        Assert.assertEquals(clickOnGeicoLogo(),"https://www.geico.com/");
     }
     @Test
     public void clickOnFeedbackIcon()throws  InterruptedException{
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals(true , clickOnFeedBackIcon() );
+        Assert.assertEquals(clickOnFeedBackIcon(),true  );
         System.out.println();
     }
 }
