@@ -10,11 +10,11 @@ public class HamburgerMenu extends CommonApi {
     @FindBy(xpath = "//a[@id='nav-hamburger-menu']")
     public static WebElement hamburgerMenu;
 
-//    public HamburgerMenu clickOnHamburgerMenu() throws InterruptedException {
-//        hamburgerMenu.click();
-//        wait.until(ExpectedConditions.visibilityOf((WebElement) HamburgerMenu));
-//        return new HamburgerMenu();
-//
-//    }
+    public HamburgerMenu clickOnHamburgerMenu() throws InterruptedException {
+        hamburgerMenu.click();
+        wait.until(ExpectedConditions.visibilityOf((WebElement) HamburgerMenu));
+        return new HamburgerMenu();
+
+    }
 
 }
