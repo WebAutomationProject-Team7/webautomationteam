@@ -122,7 +122,7 @@ public class CommonApi {
 //        }
 //        return driver;
 //    }
-
+//
 
         @Parameters({/*"useCloudEnv","cloudEnvName",*/ "os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
