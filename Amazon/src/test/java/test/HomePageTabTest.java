@@ -8,6 +8,9 @@ import org.testng.annotations.Test;
 import pages.HomePageTab;
 import reporting.ExtentManager;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
 public class HomePageTabTest extends HomePageTab {
 
     HomePageTab homePage;
@@ -20,9 +23,9 @@ public class HomePageTabTest extends HomePageTab {
     }
 
     @Test
-    public void LogoDisplayed() {
-//        ConnectToSqlDB connect = new ConnectToSqlDB();
-//        connect.connectToSqlDatabase();
+    public void LogoDisplayed() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, IOException {
+        ConnectToSqlDB connect = new ConnectToSqlDB();
+        connect.connectToSqlDatabase();
         boolean actual = isLogoDisplayed();
         boolean expected = true;
         Assert.assertEquals(actual, expected);

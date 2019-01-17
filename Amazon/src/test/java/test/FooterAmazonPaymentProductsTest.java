@@ -1,12 +1,9 @@
 package test;
 
-import com.relevantcodes.extentreports.ExtentReports;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.FooterAmazonPaymentProducts;
-import pages.FooterMakeMoneyWithUs;
-import reporting.ExtentManager;
 
 public class FooterAmazonPaymentProductsTest extends FooterAmazonPaymentProducts {
     FooterAmazonPaymentProducts footerAmazonPaymentProducts;
@@ -17,11 +14,12 @@ public class FooterAmazonPaymentProductsTest extends FooterAmazonPaymentProducts
         //reports = ExtentManager.getInstance();
     }
     @Test
-    public void AmazonPaymentProductsSetUp() {
+    public String AmazonPaymentProductsSetUp() {
         AmazonRewardsVisaProducts.click();
-        String actual = "EarnRewardsEverywhereYouShop";
+        String actual = AmazonPaymentProductsSetUp();
         String expected = "EarnRewardsEverywhereYouShop";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
     public void AmazonStoreCardDisplay(){
