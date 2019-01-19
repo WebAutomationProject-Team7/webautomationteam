@@ -18,7 +18,8 @@
             <!--<class name="test.FooterMakeMoneyWithUsTest"/>-->
             <!--<class name="test.FooterAmazonPaymentProductsTest"/>-->
             <!--<class name="test.HomePageSearchBoxTest"/>-->
-            <class name="test.datasourseTest.DatabaseOperationTest"/>
+            <!--<class name="test.datasourseTest.DatabaseOperationTest"/>-->
+            <class name="test.LoginPageWithExcelTest"/>
 
 
 
