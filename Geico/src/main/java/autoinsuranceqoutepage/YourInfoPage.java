@@ -19,7 +19,7 @@ public class YourInfoPage extends QuotesOnProducts {
     public static WebElement firstName;
     @FindBy(id = "lastName")
     public static WebElement lastName;
-    @FindBy(css = ".btn-spotlight")
+    @FindBy(xpath = "//*[@class='btn btn--primary btn--full-mobile btn-spotlight']")
     public static WebElement submit;
     public  void getInformationPage1QuoteWithZipCode()  {
         autoInsIcon.click();

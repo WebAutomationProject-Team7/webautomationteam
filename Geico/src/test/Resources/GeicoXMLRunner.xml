@@ -22,7 +22,7 @@
             <!--<class name="homepagetest.InsuranceDDTest"/>-->
             <!--<class name="homepagetest.SearchFunctionalityTest"/>-->
             <!--<class name="footerpagetest.MediaLinksTest"/>-->
-            <!--<class name="footerpagetest.WesiteLinksTest"/>-->
+            <class name="footerpagetest.WebsiteLinksTest"/>
             <!--<class name="autoinsurancequotetest.YourInfoPageTest"/>-->
             <!--<class name="autoinsurancequotetest.YourAddressPageTest"/>-->
             <!--<class name="autoinsurancequotetest.VehicleDetailsPageTest"/>-->

@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class WesiteLinksTest extends WebsiteLinks {
+public class WebsiteLinksTest extends WebsiteLinks {
     WebsiteLinks websiteLinks;
     @BeforeMethod
     public void init(){websiteLinks= PageFactory.initElements(driver, WebsiteLinks.class);
