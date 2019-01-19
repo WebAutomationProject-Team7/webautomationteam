@@ -261,9 +261,9 @@ public class ApplicationPageBase extends CommonApi {
     public void clearInput(String locator){
         driver.findElement(By.cssSelector(locator)).clear();
     }
-    public void keysInput(String locator){
-        driver.findElement(By.cssSelector(locator)).sendKeys(Keys.ENTER);
-    }
+   // public void keysInput(String locator){
+       // driver.findElement(By.cssSelector(locator)).sendKeys(Keys.ENTER);}
+
     //Handling New Tabs
     public static WebDriver handleNewTab(WebDriver driver1){
         String oldTab = driver1.getWindowHandle();

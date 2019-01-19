@@ -3,7 +3,6 @@ package datasource;
 import base.CommonApi;
 import database.ConnectToSqlDB;
 
-import javax.smartcardio.CommandAPDU;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,10 +12,10 @@ public class DatabaseOperation extends CommonApi {
 
     static ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
-    public static void insertDataIntoDB(){
+    public static void insertDataIntoDB() throws IllegalAccessException, InstantiationException {
         List<String> list = getItemValue();
         connectToSqlDB = new ConnectToSqlDB();
-        connectToSqlDB.insertStringDataFromArrayListToSqlTable(list,"ItemList","items");
+        connectToSqlDB.insertDataFromArrayListToSqlTable(list,"ItemList","items");
     }
 
     public static List<String> getItemValue(){
