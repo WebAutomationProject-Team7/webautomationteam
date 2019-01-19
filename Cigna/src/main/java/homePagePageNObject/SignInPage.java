@@ -2,22 +2,18 @@ package homePagePageNObject;
 
 import base.CommonApi;
 import database.ConnectToSqlDB;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import reporting.TestLogger;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static base.PageOfApplication.convertToString;
 import static base.PageOfApplication.navigateBack;
 
 public class SignInPage extends CommonApi {
+
     @FindBy(xpath ="//div[@id='c1353257994291']/div[1]/ul/li[1]/a")
     public static WebElement register;
     @FindBy(id="username")
@@ -46,7 +42,12 @@ public class SignInPage extends CommonApi {
         return messageList.get(0);
     }
 
+    public void getErroMessage() {
+        return;
+    }
 }
+
+
 
 
 

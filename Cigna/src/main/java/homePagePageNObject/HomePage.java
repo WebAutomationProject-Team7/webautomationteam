@@ -194,6 +194,9 @@ public class HomePage extends CommonApi {
     }
 
 
+    public void getLogInPage() {
+        return;
+    }
 }
 
 
