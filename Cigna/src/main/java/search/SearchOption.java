@@ -1,6 +1,5 @@
 package search;
 
-
 import database.ConnectToSqlDB;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -34,7 +33,6 @@ public class SearchOption extends HomePage {
         searchMessage.click();
         wait.until(ExpectedConditions.visibilityOf(searchMessage));
     }
-
     public String searchWithEnter(String searchKeys) {
         TestLogger.log(getClass().getSimpleName() + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
@@ -43,7 +41,6 @@ public class SearchOption extends HomePage {
         return searchMessage.getText();
 
     }
-
     public String searchOptionTab() {
         TestLogger.log(getClass().getSimpleName() + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));

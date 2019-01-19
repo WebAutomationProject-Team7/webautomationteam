@@ -190,10 +190,7 @@ public class HomePage extends CommonApi {
         String url = driver.getCurrentUrl();
         System.out.println(url);
         return url;
-
     }
-
-
     public void getLogInPage() {
         return;
     }
