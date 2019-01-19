@@ -13,11 +13,12 @@
 
     <test name = "Amazon Test">
         <classes>
-            <class name="test.HomePageTabTest"/>
+            <!--<class name="test.HomePageTabTest"/>-->
             <!--<class name="test.FooterPageGetToKnowUsTest"/>-->
             <!--<class name="test.FooterMakeMoneyWithUsTest"/>-->
             <!--<class name="test.FooterAmazonPaymentProductsTest"/>-->
             <!--<class name="test.HomePageSearchBoxTest"/>-->
+            <class name="test.datasourseTest.DatabaseOperationTest"/>
 
 
 

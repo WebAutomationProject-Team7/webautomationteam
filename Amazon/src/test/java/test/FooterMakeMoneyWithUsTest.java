@@ -1,12 +1,10 @@
 package test;
 
-import base.CommonApi;
 import com.relevantcodes.extentreports.ExtentReports;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.FooterMakeMoneyWithUs;
-import pages.HomePageTab;
 import reporting.ExtentManager;
 
 public class FooterMakeMoneyWithUsTest extends FooterMakeMoneyWithUs {
@@ -20,69 +18,78 @@ public class FooterMakeMoneyWithUsTest extends FooterMakeMoneyWithUs {
         reports = ExtentManager.getInstance();
     }
     @Test
-    public void SellOnAmazonDisplay() {
+    public String SellOnAmazonDisplay() {
         SellOnAmazon.click();
-        String actual = "SellOnAmazon";
+        String actual = SellOnAmazonDisplay();
         String expected = "SellOnAmazon";
         Assert.assertEquals(actual, expected);
         //Thread.sleep(20000);
+        return actual;
     }
     @Test
-    public void SellUndersPrivateBrandsShow() {
+    public String SellUndersPrivateBrandsShow() {
         SellUnderPrivateBrands.click();
-        String actual = "JoinTheAmazonFamilyOfBrands";
+        String actual = SellUndersPrivateBrandsShow();
         String expected = "JoinTheAmazonFamilyOfBrands";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void SellOnAmazonHandMadeDisplay() {
+    public String SellOnAmazonHandMadeDisplay() {
         SellOnAmazonHandMade.click();
-        String actual = "SellOnAmazonHandMade";
+        String actual = SellOnAmazonHandMadeDisplay() ;
         String expected = "SellOnAmazonHandMade";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void SellYourServicesOnAmazonShow() {
+    public String SellYourServicesOnAmazonShow() {
         SellYourServicesOnAmazon.click();
-        String actual = "Selling Services";
+        String actual = SellYourServicesOnAmazonShow() ;
         String expected = "Selling Services";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void SellOnAmazonBusinessNav() {
+    public String SellOnAmazonBusinessNav() {
         SellOnAmazonBusiness.click();
-        String actual = "AmazonBusiness";
+        String actual = SellOnAmazonBusinessNav() ;
         String expected = "AmazonBusiness";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void SellYourAppOnAmazonShow()  {
+    public String SellYourAppOnAmazonShow()  {
         SellYourAppOnAmazon.click();
-        String actual = "AmazonDeveloperServicesAndTechnologies";
+        String actual = SellYourAppOnAmazonShow();
         String expected = "AmazonDeveloperServicesAndTechnologies";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void BecomeAnAffiliateDisplay() {
+    public String BecomeAnAffiliateDisplay() {
         BecomeAnAffiliate.click();
-        String actual = "ProfitFromOurExperience";
+        String actual = BecomeAnAffiliateDisplay() ;
         String expected = "ProfitFromOurExperience";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void AdvertiseYourProductsShow(){
+    public String AdvertiseYourProductsShow(){
         AdvertiseYourProducts.click();
-        String actual = "AdvertiseWithIntent";
+        String actual =  AdvertiseYourProductsShow();
         String expected = "AdvertiseWithIntent";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void SelfPublishWithUsDisplay() throws InterruptedException {
+    public String SelfPublishWithUsDisplay() throws InterruptedException {
         SelfPublishWithUs.click();
-        String actual = "TakeControlWithSelfPublishing";
+        String actual = SelfPublishWithUsDisplay();
         String expected = "SelfPublishWithUs";
         Assert.assertEquals(actual, expected);
         Thread.sleep(20000);
+        return actual;
     }
 
 }

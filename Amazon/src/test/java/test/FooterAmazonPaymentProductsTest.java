@@ -22,55 +22,62 @@ public class FooterAmazonPaymentProductsTest extends FooterAmazonPaymentProducts
         return actual;
     }
     @Test
-    public void AmazonStoreCardDisplay(){
+    public String AmazonStoreCardDisplay(){
         AmazonStoreCard.click();
-        String actual = "BecomeAnAmazonDotComStoreCardHolder";
+        String actual = AmazonStoreCardDisplay();
         String expected = "BecomeAnAmazonDotComStoreCardHolder";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void AmazonBusinessCardNav(){
+    public String AmazonBusinessCardNav(){
         AmazonBusinessCard.click();
-        String actual = "AmazonBusinessAmericanExpressCard";
+        String actual = AmazonBusinessCardNav();
         String expected = "AmazonBusinessAmericanExpressCard";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void AmazonCorporateCreditLineDisplay(){
+    public String AmazonCorporateCreditLineDisplay(){
         AmazonCorporateCreditLine.click();
-        String actual = "AmazonDotComCorporateCreditLine";
+        String actual = AmazonCorporateCreditLineDisplay();
         String expected = "AmazonDotComCorporateCreditLine";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void ShopWithPointsNav(){
+    public String ShopWithPointsNav(){
         ShopWithPoints.click();
-        String actual = "UseYourFavoriteRewardsPoints";
+        String actual =  ShopWithPointsNav();
         String expected = "UseYourFavoriteRewardsPoints";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void CreditCardMarketplaceDisplay(){
+    public String CreditCardMarketplaceDisplay(){
         CreditCardMarketplace.click();
-        String actual = "CreditAndPaymentCards";
+        String actual = CreditCardMarketplaceDisplay();
         String expected = "CreditAndPaymentCards";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void ReloadYourBalanceShow(){
+    public String ReloadYourBalanceShow(){
         ReloadYourBalance.click();
-        String actual = "BenefitsOfReloadingYourBalance";
+        String actual =  ReloadYourBalanceShow();
         String expected = "BenefitsOfReloadingYourBalance";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void AmazonCurrencyConverterSet() throws InterruptedException {
+    public String AmazonCurrencyConverterSet() throws InterruptedException {
         AmazonCurrencyConverter.click();
-        String actual = "ItsEasyToPayInYourLocalCurrency";
+        String actual = AmazonCurrencyConverterSet();
         String expected = "ItsEasyToPayInYourLocalCurrency";
         Assert.assertEquals(actual, expected);
         Thread.sleep(20000);
 
+        return actual;
     }
 
 }

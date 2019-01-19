@@ -16,44 +16,50 @@ public class FooterPageGetToKnowUsTest extends FooterPageGetToKnowUs {
         reports = ExtentManager.getInstance();
     }
     @Test
-    public void setCareers(){
+    public String setCareers(){
         Careers.click();
-        String actual = "FindJobs";
+        String actual = setCareers();
         String expected = "FindJobs";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void BlogDisplay(){
+    public String BlogDisplay(){
         Blog.click();
-        String actual = "DayOne";
+        String actual = BlogDisplay();
         String expected = "DayOne";
         Assert.assertEquals(actual, expected);
 
+        return actual;
     }
     @Test
-    public void AboutAmazonShow(){
+    public String AboutAmazonShow(){
         AboutAmazon.click();
-        String actual = "AmazonFulfillment";
+        String actual = AboutAmazonShow();
         String expected = "AmazonFulfillment";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void PressCenterDisplay(){
+    public String PressCenterDisplay(){
         PressCenter.click();
-        String actual = "PressCenter";
+        String actual = PressCenterDisplay();
         String expected = "PressCenter";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
     @Test
-    public void InvestorRelationsPress(){
+    public String InvestorRelationsPress(){
         InvestorRelations.click();
-        String actual = "InvestorRelations";
+        String actual = InvestorRelationsPress();
         String expected = "InvestorRelations";
+        return actual;
     }
     @Test
-    public void AmazonDevicesDisplay(){
+    public String AmazonDevicesDisplay(){
         AmazonDevices.click();
-        String actual = "AmazonDevices";
+        String actual = AmazonDevicesDisplay();
         String expected = "AmazonDevices";
+        return actual;
     }
 }

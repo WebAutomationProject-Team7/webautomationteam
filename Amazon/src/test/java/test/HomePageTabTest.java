@@ -39,77 +39,86 @@ public class HomePageTabTest extends HomePageTab {
     }
 
     @Test
-    public void DropDownMenuClicked() {
+    public boolean DropDownMenuClicked() {
         dropDownMenu.click();
-        boolean actual = true;
+        boolean actual = DropDownMenuClicked();
         boolean expected = true;
         Assert.assertEquals(actual, expected);
+        return actual;
     }
 
     @Test
-    public void HamburgerMenuClicked() {
+    public String HamburgerMenuClicked() {
         hamburgerMenu.click();
-        String actual = "ShopByCategory";
+        String actual = HamburgerMenuClicked();
         String expected = "ShopByCategory";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
 
     @Test
-    public void YourAmazonDotNavBarClicked() {
+    public String YourAmazonDotNavBarClicked() {
         yourAmazonDotComNavBar.click();
-        String actual = "SignIn";
+        String actual = YourAmazonDotNavBarClicked();
         String expected = "SignIn";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
 
     @Test
-    public void TodayDealsNavigation() {
+    public String TodayDealsNavigation() {
         TodayDeals.click();
-        String actual = "Today's Deals";
+        String actual = TodayDealsNavigation();
         String expected = "Today's Deals";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
 
     @Test
-    public void GiftCardsDisplay() {
+    public String GiftCardsDisplay() {
         GiftCards.click();
-        String actual = "GiftCards";
+        String actual = GiftCardsDisplay();
         String expected = "GiftCards";
         Assert.assertEquals(actual, expected);
 
+        return actual;
     }
 
     @Test
-    public void WholeFoodTab() {
+    public String WholeFoodTab() {
         WholeFoods.click();
-        String actual = "SavingsAreAlwaysInSeason";
+        String actual = WholeFoodTab();
         String expected = "SavingsAreAlwaysInSeason";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
 
     @Test
-    public void RegistryDisplay() {
+    public String RegistryDisplay() {
         Registry.click();
-        String actual = "RegisterWithAmazon";
+        String actual = RegistryDisplay();
         String expected = "RegisterWithAmazon";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
 
     @Test
-    public void SellNav() {
+    public String SellNav() {
         Sell.click();
-        String actual = "ReachHundtedsOfMillionsOfCustomers";
+        String actual = SellNav();
         String expected = "ReachHundtedsOfMillionsOfCustomers";
         Assert.assertEquals(actual, expected);
+        return actual;
     }
 
     @Test
-    public void HelpPress() {
+    public String HelpPress() {
         Help.click();
-        String actual = "WhatWeCanHelpYouWith?";
+        String actual = HelpPress();
         String expected = "WhatWeCanHelpYouWith?";
         Assert.assertEquals(actual, expected);
 
+        return actual;
     }
 }
 
