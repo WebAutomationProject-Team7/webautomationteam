@@ -88,6 +88,10 @@ public class ApplicationPageBase extends CommonApi {
     public static void clickByXpath(String locator) {
         driver.findElement(By.xpath(locator)).click();
     }
+    public static void clickByCss(String locator) {
+        driver.findElement(By.cssSelector(locator)).click();
+    }
+
 
     public void typeByCss(String locator, String value) {
         driver.findElement(By.cssSelector(locator)).sendKeys(value);

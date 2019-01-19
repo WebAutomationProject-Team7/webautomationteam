@@ -1,7 +1,7 @@
 package datadriventest;
 import excelreader.MyDataReader;
-import homePage.LoginFunctionality;
-import homePage.SearchFunctionality;
+import homepage.LoginFunctionality;
+import homepage.SearchFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

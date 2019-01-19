@@ -1,8 +1,7 @@
 package datadriventest;
 
 import googlesheetapi.GoogleSheetReader;
-import homePage.LoginFunctionality;
-import homePage.SearchFunctionality;
+import homepage.LoginFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

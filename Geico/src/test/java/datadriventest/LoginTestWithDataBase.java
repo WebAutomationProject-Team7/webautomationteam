@@ -1,6 +1,6 @@
 package datadriventest;
 
-import homePage.LoginFunctionality;
+import homepage.LoginFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -15,7 +15,7 @@ import reporting.TestLogger;
     @Test
     public void testLoginWithMessageFromDatabase() throws Exception {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        Assert.assertEquals( userLogin("abc@gmail.com","1234"),searchfromdatabase());
+        Assert.assertEquals( userLogin("abcd@gmail.com","1234"),searchfromdatabase());
     }
 
 }
