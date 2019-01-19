@@ -1,11 +1,14 @@
 package base;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.codehaus.plexus.util.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -13,12 +16,12 @@ import org.testng.annotations.*;
 import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -28,8 +31,100 @@ import java.util.concurrent.TimeUnit;
 public class CommonApi {
     public static WebDriver driver = null;
     public static WebDriverWait wait = null;
+//    public static final String browserstack_username = "mdarifmahmud1";
+//    public static final String browserstack_automateKey = "ofCjmDqpk5qNzceZqK49";
+//    public static final String saucelabs_username ="arifqa" ;
+//    public static final String saucelabs_accesskey = "07c30036-0158-4660-bf6a-fc4132ffee19";
+//    @Parameters({"useCloudEnv","cloudEnvName", "os", "os_version", "browserName", "browserVersion", "url"})
+//    @BeforeMethod
+//    public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
+//                      @Optional("windows") String os, @Optional("10") String os_version, @Optional("firefox") String browserName, @Optional("34")
+//                              String browserVersion, @Optional("https://www.google.com") String url) throws IOException {
+//
+//        if (useCloudEnv == true) {
+//            if (cloudEnvName.equalsIgnoreCase("browserstack")) {
+//                getCloudDriver(cloudEnvName, browserstack_username, browserstack_automateKey, os, os_version, browserName, browserVersion);
+//            } else if (cloudEnvName.equalsIgnoreCase("saucelabs")) {
+//                getCloudDriver(cloudEnvName, saucelabs_username, saucelabs_accesskey, os, os_version, browserName, browserVersion);
+//            }
+//        } else {
+//            getLocalDriver(browserName, os);
+//        }
+//        wait = new WebDriverWait(driver, 40);
+//        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS); // 20
+//        driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS); //35
+//        driver.manage().window().maximize();
+//        driver.get(url);
+//
+//    }
+//
+//    public WebDriver getLocalDriver(String browserName, String os) {
+//
+//
+//        if (browserName.equalsIgnoreCase("chrome")) {
+//            ChromeOptions options =new ChromeOptions();
+//            options.addArguments("--start-maximized");
+//            options.addArguments("--ignore-certificate-errors");
+//            options.addArguments("--incognito");
+//            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//
+//            if (os.equalsIgnoreCase("windows")) {
+//                System.setProperty("webdriver.chrome.driver", "../Generic/drivers/windows/chromedriver.exe");
+//                driver = new ChromeDriver(options);
+//                 // TestLogger.log("Chrome Browser Launched");
+//            } else if (os.equalsIgnoreCase("mac")) {
+//                System.setProperty("webdriver.chrome.driver", "../Generic/drivers/mac/chromedriver");
+//                driver = new ChromeDriver(options);
+//                // TestLogger.log("Chrome Browser Launched");
+//            }
+//        } else if (browserName.equalsIgnoreCase("firefox")) {
+//
+//            FirefoxOptions options = new FirefoxOptions();
+//
+//            options.addArguments("--start-maximized");
+//            options.addArguments("--ignore-certificate-errors");
+//            options.addArguments("--private");
+//            DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+//            capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, options);
+//
+//
+//            if (os.equalsIgnoreCase("windows")) {
+//                System.setProperty("webdriver.gecko.driver", "../Generic/drivers/windows/geckodriver.exe");
+//                driver = new FirefoxDriver(options);
+//            } else if (os.equalsIgnoreCase("mac")) {
+//                System.setProperty("webdriver.gecko.driver", "../Generic/drivers/mac/geckodriver");
+//                driver = new FirefoxDriver(options);
+//            }
+//        }
+//
+//       return driver;
+//    }
+//
+//    public WebDriver getCloudDriver(String envName, String envUsername, String envAccessKey, String os, String os_version, String browserName,
+//                                    String browserVersion) throws IOException {
+//
+//        DesiredCapabilities caps = new DesiredCapabilities();
+//        caps.setCapability("browser", browserName);
+//        caps.setCapability("browser_version", browserVersion);
+//        caps.setCapability("os", os);
+//        caps.setCapability("os_version", os_version);
+//
+//        // WebDriver driver = new RemoteWebDriver(new URL(URL), caps);
+//
+//        if (envName.equalsIgnoreCase("Saucelabs")) {
+//            driver = new RemoteWebDriver(new URL("http://" + envUsername + ":" + envAccessKey + "@ondemand.saucelabs.com:80/wd/hub"), caps);
+//
+//        } else if (envName.equalsIgnoreCase("Browserstack")) {
+//
+//            caps.setCapability("resolution", "1024x768");
+//            driver = new RemoteWebDriver(new URL("http://" + envUsername + ":" + envAccessKey + "@hub-cloud.browserstack.com/wd/hub"), caps);
+//        }
+//        return driver;
+//    }
+//
 
-    @Parameters({/*"useCloudEnv","cloudEnvName", */"os", "os_version", "browserName", "browserVersion", "url"})
+        @Parameters({/*"useCloudEnv","cloudEnvName",*/ "os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
     public void setUp(/*@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,*/
                      @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome") String browserName, @Optional("34")
@@ -44,6 +139,12 @@ public class CommonApi {
 
     public WebDriver getLocalDriver(String browserName, String os) {
         if (browserName.equalsIgnoreCase("chrome")) {
+            ChromeOptions options =new ChromeOptions();
+            options.addArguments("--start-maximized");
+            options.addArguments("--ignore-certificate-errors");
+            options.addArguments("--incognito");
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             if (os.equalsIgnoreCase("windows")) {
                 System.setProperty("webdriver.chrome.driver", "..\\Generic\\Drivers\\chromedriver.exe");
                 driver = new ChromeDriver();
@@ -132,6 +233,7 @@ public class CommonApi {
         } catch (Exception e) {
             System.out.println("Exception while taking screenshot "+e.getMessage());;
         }
+
 
     }
 }
