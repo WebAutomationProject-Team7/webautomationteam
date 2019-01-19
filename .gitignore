@@ -6,4 +6,4 @@
 *.DS_Store
 *Extent-Report
 *screenshots
-*html
+*.html
