@@ -5,33 +5,23 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageNobject.HomePage;
-import pageNobject.SignInPage;
+import homePagePageNObject.HomePage;
+import homePagePageNObject.SignInPage;
+import reporting.TestLogger;
 
-public class TestSignInPage extends CommonApi {
+import static base.PageOfApplication.convertToString;
+
+public class TestSignInPage extends SignInPage {
 
 
-        HomePage ownPage;
         SignInPage signInPage;
-
         @BeforeMethod
-        public void initilizationOfObject() {
-            ownPage = PageFactory.initElements(driver, HomePage.class);
-            signInPage = PageFactory.initElements(driver, SignInPage.class);
-        }
-
-        @Test(priority = 1, enabled = true)
-        public void loginButton() {
-            String actualErrorMsg = signInPage.enterCredintials();
-            String expectedResult = "The ID and password combination you entered does not match our records.";
-            Assert.assertTrue(actualErrorMsg.contains(expectedResult));
-        }
-        @Test(priority = 1, enabled = true)
-        public void regrister1() {
-            ownPage.checkContactUs();
-            signInPage.howToRegrister();
-            signInPage.registration1();
-            signInPage.registration2();
+        public void init(){
+            signInPage = PageFactory.initElements(driver, SignInPage.class);}
+        @Test
+        public void testUserLogin() throws InterruptedException {
+            TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+            String actualErrorMessage=userLogin("salmaalam@gmail.com", "abcd1234");
+            Assert.assertEquals(actualErrorMessage,"Credential is not correct.Verify you ID and Password");
         }
     }
-

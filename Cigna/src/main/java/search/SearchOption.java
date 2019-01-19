@@ -6,7 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import pageNobject.HomePage;
+import homePagePageNObject.HomePage;
 import reporting.TestLogger;
 
 import java.util.ArrayList;
@@ -63,7 +63,7 @@ public class SearchOption extends HomePage {
     public List<String> getSearchKeys() {
         keyList.add("Doctors");
         keyList.add("Medicine");
-        keyList.add("Claim Form");
+        keyList.add("Medical Claim Form");
         keyList.add("Hospitals");
         return keyList;
 

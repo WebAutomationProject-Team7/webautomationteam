@@ -5,8 +5,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pageNobject.HomePage;
-import pageNobject.SignInPage;
+import homePagePageNObject.HomePage;
+import homePagePageNObject.SignInPage;
 
 import java.sql.SQLException;
 
