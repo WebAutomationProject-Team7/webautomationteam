@@ -26,10 +26,14 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class CommonApi {
+
     public static WebDriver driver = null;
     public static WebDriverWait wait = null;
+    public static final String browserstack_username = "salmaalam1";
+    public static final String browserstack_automateKey = "duFJ6suqtdsR2R1mG2sz";
 
-    @Parameters({/*"useCloudEnv","cloudEnvName", */"os", "os_version", "browserName", "browserVersion", "url"})
+
+    @Parameters({/*"useCloudEnv","cloudEnvName",*/ "os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
     public void setUp(/*@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,*/
                      @Optional("windows") String os, @Optional("10") String os_version, @Optional("chrome") String browserName, @Optional("34")

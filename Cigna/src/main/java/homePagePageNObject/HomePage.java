@@ -90,9 +90,9 @@ public class HomePage extends CommonApi {
     }
     public String checkIndividualFamilies() {
         individualFamilies.click();
-        String url = driver.getCurrentUrl();
-        System.out.println(url);
-        return url;
+        String message = driver.getCurrentUrl();
+        System.out.println(message);
+        return message;
     }
     public String checkEmployerNbrokers() {
         employersNbrokers.click();

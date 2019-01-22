@@ -3,8 +3,8 @@
 
 <suite name="Cigna Automation Test" parallel="false">
 
-    <!--<parameter name="useCloudEnv" value="false"/>-->
-    <!--<parameter name="cloudEnvName" value="browserstack"/>-->
+    <parameter name="useCloudEnv" value="true"/>
+    <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="os" value="mac"/>
     <parameter name="os_version" value="10"/>
     <parameter name="browserName" value="chrome"/>
@@ -16,8 +16,10 @@
 
             <!--<class name="TestCase.TestSignInPage"/>-->
             <!--<class name="TestCase.TestHomePage"/>-->
+
             <!--<class name="TestCase.TestSearchOption"/>-->
-            <class name="TestCase.SearchTestWithGoogleSheetApi"/>
+            <!--<class name="TestCase.SearchTestWithGoogleSheetApi"/>-->
+            <class name="TestCase.TestExcelReaderPage"/>
 
         </classes>
     </test>

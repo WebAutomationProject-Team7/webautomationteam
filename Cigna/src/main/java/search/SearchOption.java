@@ -15,8 +15,6 @@ public class SearchOption extends HomePage {
 
     @FindBy(css = "#csng-search-header > search-header-bar > form > div > cigna-typeahead > input")
     public static WebElement searchBox;
-    @FindBy(css = "#csng-search-header > search-header-bar > form > div > cigna-typeahead > div > button")
-    public static WebElement searchOptionBox;
     @FindBy(xpath = "//*[@id=\"csng-search-results\"]/search-bar/h1")
     public static WebElement searchMessage;
     private Object name;
@@ -36,7 +34,7 @@ public class SearchOption extends HomePage {
     public String searchWithEnter(String searchKeys) {
         TestLogger.log(getClass().getSimpleName() + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
-        waitToBeVisible();
+       // waitToBeVisible();
         searchBox.sendKeys(searchKeys, Keys.ENTER);
         return searchMessage.getText();
 
@@ -45,7 +43,6 @@ public class SearchOption extends HomePage {
         TestLogger.log(getClass().getSimpleName() + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         waitToBeVisible();
-        searchOptionBox.click();
         return searchMessage.getText();
 
     }

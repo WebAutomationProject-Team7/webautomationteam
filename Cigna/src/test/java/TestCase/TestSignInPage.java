@@ -25,7 +25,7 @@ public class TestSignInPage extends PageOfApplication {
     }
     @DataProvider(name="DP")
     public Object[][] getTestData() throws Exception{
-        File filepath = new File(System.getProperty("user.dir") +  "/testData/TestData.xlsx");
+        File filepath = new File(System.getProperty("/Users/salmaalam/IdeaProjects/webautomationteam/Cigna/TestData/TestData.xlsx"));
         MyDataReader dr = new MyDataReader();
         dr.setExcelFile(filepath.getAbsolutePath());
         String[][] data = dr.getExcelSheetData("Sheet1");
@@ -33,7 +33,6 @@ public class TestSignInPage extends PageOfApplication {
     }
     @Test(dataProvider = "DP")
     public  void invalidSignin(String email, String password, String expectedErroMessage) throws InterruptedException {
-
         homePage.getLogInPage();
         signInPage.userLogin(email,password);
         String expectedText = expectedErroMessage;
