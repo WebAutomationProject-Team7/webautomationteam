@@ -26,8 +26,8 @@ public class TestHomePage extends HomePage {
 
     @Test
     public void cignaInternationalTab() throws Exception, SQLException {
-        ConnectToSqlDB con = new ConnectToSqlDB();
-        con.connectToSqlDatabase();
+        ConnectToSqlDB connect = new ConnectToSqlDB();
+        connect.connectToSqlDatabase();
         String actual = homePage.cignaInternational();
         String expect = "https://www.cigna.com/international/";
         Assert.assertEquals(actual, expect);

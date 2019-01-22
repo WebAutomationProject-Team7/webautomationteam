@@ -12,18 +12,7 @@ public class TestSearchOption extends SearchOption {
 
     public String keys = "Property";
     SearchOptionClass search;
-    @BeforeMethod
-    public void initialisationOfElements(){
-        search = PageFactory.initElements(driver,SearchOptionClass.class);
-    }
-@Test
-    public void testSearchWithEnterKey() throws Exception{
-    TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-    ConnectToSqlDB con = new ConnectToSqlDB();
-    ConnectToSqlDB.connectToSqlDatabase();
-
-}
-        private String searchWithENTER(String keys) {
+    private String searchWithENTER(String keys) {
         return keys;
 
     }
@@ -31,11 +20,22 @@ public class TestSearchOption extends SearchOption {
         return name;
     }
 
+    @BeforeMethod
+    public void initialisationOfElements(){
+        search = PageFactory.initElements(driver,SearchOptionClass.class);
+    }
+    @Test
+    public void testSearchWithEnterKey() throws Exception{
+    TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+    ConnectToSqlDB connect = new ConnectToSqlDB();
+    ConnectToSqlDB.connectToSqlDatabase();
+
+}
     @Test
     public void testSearchWithButton()throws Exception {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        ConnectToSqlDB con = new ConnectToSqlDB();
-        con.connectToSqlDatabase();
+        ConnectToSqlDB connect = new ConnectToSqlDB();
+        connect.connectToSqlDatabase();
 
     }
 

@@ -17,7 +17,7 @@ public class SearchOption extends HomePage {
     public static WebElement searchBox;
     @FindBy(css = "#csng-search-header > search-header-bar > form > div > cigna-typeahead > div > button")
     public static WebElement searchOptionBox;
-    @FindBy(css = "#w1521376016260")
+    @FindBy(xpath = "//*[@id=\"csng-search-results\"]/search-bar/h1")
     public static WebElement searchMessage;
     private Object name;
     private String getMessage;

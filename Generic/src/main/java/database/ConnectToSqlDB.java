@@ -249,6 +249,7 @@ public class ConnectToSqlDB {
     public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2) throws InstantiationException, IllegalAccessException {
         try {
             connectToSqlDatabase();
+
             ps = connect.prepareStatement("INSERT INTO " + tableName + " ( " + columnName1 + "," + columnName2 + " ) VALUES(?,?)");
             ps.setString(1, "Ankita Sing");
             ps.setInt(2, 3590);
