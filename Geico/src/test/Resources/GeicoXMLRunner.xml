@@ -13,27 +13,27 @@
 
     <test name = "Geico Homepage Test">
         <classes>
-            <!--<class name="homepagetest.SearchFunctionalityTest"/>-->
-            <!--<class name="homepagetest.FeedbackTest"/>-->
-            <!--<class name="homepagetest.LandingPageBasicTest"/>-->
-            <!--<class name="homepagetest.QuotesOnProductsTest"/>-->
-            <!--<class name="homepagetest.YourPolicyDDTest"/>-->
-            <!--<class name="homepagetest.InformationDDTest"/>-->
-            <!--<class name="homepagetest.InsuranceDDTest"/>-->
-            <!--<class name="homepagetest.SearchFunctionalityTest"/>-->
-            <!--<class name="footerpagetest.MediaLinksTest"/>-->
-            <!--<class name="footerpagetest.WebsiteLinksTest"/>-->
-            <!--<class name="autoinsurancequotetest.YourInfoPageTest"/>-->
-            <!--<class name="autoinsurancequotetest.YourAddressPageTest"/>-->
-            <!--<class name="autoinsurancequotetest.VehicleDetailsPageTest"/>-->
-            <!--<class name="autoinsurancequotetest.DriverInformationPageTest"/>-->
-            <!--<class name="homeownersinsurancequotetest.CustomerInformationPageTest"/>-->
-            <!--<class name="datadriventest.SearchTestWithExcelReader"/>-->
-            <!--<class name="datadriventest.SearchTestWithGoogleSheetApi"/>-->
-            <!--<class name="datadriventest.SearchTestWithEnterFromDatabase"/>-->
-            <!--<class name="datadriventest.LoginTestWithDataBase"/>-->
-            <!--<class name="datadriventest.LoginTestWithExcel"/>-->
-            <!--<class name="datadriventest.LoginTestWithGoogleSheetApi"/>-->
+            <class name="homepagetest.SearchFunctionalityTest"/>
+            <class name="homepagetest.FeedbackTest"/>
+            <class name="homepagetest.LandingPageBasicTest"/>
+            <class name="homepagetest.QuotesOnProductsTest"/>
+            <class name="homepagetest.YourPolicyDDTest"/>
+            <class name="homepagetest.InformationDDTest"/>
+            <class name="homepagetest.InsuranceDDTest"/>
+            <class name="homepagetest.SearchFunctionalityTest"/>
+            <class name="footerpagetest.MediaLinksTest"/>
+            <class name="footerpagetest.WebsiteLinksTest"/>
+            <class name="autoinsurancequotetest.YourInfoPageTest"/>
+            <class name="autoinsurancequotetest.YourAddressPageTest"/>
+            <class name="autoinsurancequotetest.VehicleDetailsPageTest"/>
+            <class name="autoinsurancequotetest.DriverInformationPageTest"/>
+            <class name="homeownersinsurancequotetest.CustomerInformationPageTest"/>
+            <class name="datadriventest.SearchTestWithExcelReader"/>
+            <class name="datadriventest.SearchTestWithGoogleSheetApi"/>
+            <class name="datadriventest.SearchTestWithEnterFromDatabase"/>
+            <class name="datadriventest.LoginTestWithDataBase"/>
+            <class name="datadriventest.LoginTestWithExcel"/>
+            <class name="datadriventest.LoginTestWithGoogleSheetApi"/>
         </classes>
     </test>
 </suite>
