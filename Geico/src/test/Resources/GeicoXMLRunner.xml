@@ -18,11 +18,11 @@
             <!--<class name="homepagetest.LandingPageBasicTest"/>-->
             <!--<class name="homepagetest.QuotesOnProductsTest"/>-->
             <!--<class name="homepagetest.YourPolicyDDTest"/>-->
-            <class name="homepagetest.InformationDDTest"/>
+            <!--<class name="homepagetest.InformationDDTest"/>-->
             <!--<class name="homepagetest.InsuranceDDTest"/>-->
             <!--<class name="homepagetest.SearchFunctionalityTest"/>-->
             <!--<class name="footerpagetest.MediaLinksTest"/>-->
-            <class name="footerpagetest.WebsiteLinksTest"/>
+            <!--<class name="footerpagetest.WebsiteLinksTest"/>-->
             <!--<class name="autoinsurancequotetest.YourInfoPageTest"/>-->
             <!--<class name="autoinsurancequotetest.YourAddressPageTest"/>-->
             <!--<class name="autoinsurancequotetest.VehicleDetailsPageTest"/>-->

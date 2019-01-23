@@ -1,5 +1,4 @@
 package homepagetest;
-
 import homepage.SearchFunctionality;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -9,6 +8,7 @@ import reporting.TestLogger;
 
 public class SearchFunctionalityTest extends SearchFunctionality {
     public String keys = "Property";
+
     SearchFunctionality search;
 
     @BeforeMethod
