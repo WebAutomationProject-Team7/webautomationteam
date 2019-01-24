@@ -1,44 +1,26 @@
 package TestCase;
 
-import base.PageOfApplication;
-import excelreader.MyDataReader;
-import homePagePageNObject.HomePage;
 import homePagePageNObject.SignInPage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import reporting.TestLogger;
 
-import java.io.File;
+import static base.PageOfApplication.convertToString;
 
-public class TestSignInPage extends PageOfApplication {
+public class TestSignInPage extends SignInPage {
 
-        SignInPage signInPage;
-        HomePage homePage;
+    SignInPage signInPage;
 
     @BeforeMethod
-    public void initializationOfElements() {
-
-        signInPage= PageFactory.initElements(driver, SignInPage.class);
-        homePage = PageFactory.initElements(driver, HomePage.class);
-    }
-    @DataProvider(name="DP")
-    public Object[][] getTestData() throws Exception{
-        File filepath = new File(System.getProperty("/Users/salmaalam/IdeaProjects/webautomationteam/Cigna/TestData/TestData.xlsx"));
-        MyDataReader dr = new MyDataReader();
-        dr.setExcelFile(filepath.getAbsolutePath());
-        String[][] data = dr.getExcelSheetData("Sheet1");
-        return data;
-    }
-    @Test(dataProvider = "DP")
-    public  void invalidSignin(String email, String password, String expectedErroMessage) throws InterruptedException {
-        homePage.getLogInPage();
-        signInPage.userLogin(email,password);
-        String expectedText = expectedErroMessage;
-        String actulText= expectedErroMessage;
-        Assert.assertEquals(actulText, expectedText);
+    public void init(){
+        signInPage = PageFactory.initElements(driver, SignInPage.class);}
+    @Test
+    public void testUserLogin() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        String actualErrorMessage = login("ihanadiat@gmail.com", "abcd");
+        Assert.assertEquals(actualErrorMessage,"The ID and password combination you entered does not match our records");
     }
 }
-
 

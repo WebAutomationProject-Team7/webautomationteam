@@ -52,7 +52,7 @@ public class CommonApi {
                 System.setProperty("webdriver.chrome.driver", "..\\Generic\\Drivers\\chromedriver.exe");
                 driver = new ChromeDriver();
             } else if (os.equalsIgnoreCase("mac")) {
-                System.setProperty("webdriver.chrome.driver", "../Generic/Drivers/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "/Users/salmaalam/IdeaProjects/webautomationteam/Generic/Drivers/chromedriver");
                 driver = new ChromeDriver();
             }
         } else if (browserName.equalsIgnoreCase("firefox")) {

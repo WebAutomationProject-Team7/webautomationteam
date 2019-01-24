@@ -17,7 +17,7 @@ public class TestExcelReaderPage extends CommonApi {
         reports = ExtentManager.getInstance();
 
     }
-    @Test(priority = 1)
+    @Test
     public void itemsSearchFromExcelData() throws InterruptedException {
         excelReader.searchFromExcel();
     }

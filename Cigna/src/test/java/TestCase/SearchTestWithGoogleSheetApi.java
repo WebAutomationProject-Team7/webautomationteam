@@ -29,7 +29,7 @@ public class SearchTestWithGoogleSheetApi extends SearchOption {
         for(List<Object> cell:getRecords){
             String messageText=searchWithEnter(cell.get(0).toString());
             String message=cell.get(1).toString();
-           // Assert.assertEquals( message,messageText);
+
         }
     }
 }
