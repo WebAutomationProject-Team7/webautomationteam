@@ -14,11 +14,13 @@
     <test name="Cigna test cases">
         <classes>
 
-            <class name="TestCase.TestSignInPage"/>
-            <!--<class name="TestCase.TestHomePage"/>-->
-            <!--<class name="TestCase.TestSearchOption"/>-->
+            <!--<class name="TestCase.TestSignInPage"/>-->
+            <class name="TestCase.TestHomePage"/>
+            <class name="TestCase.TestSearchOption"/>
             <!--<class name="TestCase.SearchTestWithGoogleSheetApi"/>-->
             <!--<class name="TestCase.TestExcelReaderPage"/>-->
+            <!--<class name="TestCase.TestIndividualFamilies"/>-->
+            <!--<class name="TestCase.TestRegisterPage"/>-->
 
         </classes>
     </test>

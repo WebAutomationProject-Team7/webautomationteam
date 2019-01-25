@@ -28,19 +28,7 @@ public class SignInPage extends CommonApi {
         login.click();
         return loginErrorMessage.getText();
     }
-   /* public String searchFromDatabase() throws Exception {
-        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
-        ConnectToSqlDB con=new ConnectToSqlDB();
-        List<String> messageList=new ArrayList<>();
-        List<String> data = con.readDataBase("SignIn","Feedback");
-        for (String key:data){ messageList.add(key);navigateBack();
-        }
-        return messageList.get(0);
-    }
 
-    public void getErroMessage() {
-        return;
-    }*/
 }
 
 
