@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>practice.web.automation</groupId>
     <artifactId>webautomationteam</artifactId>
     <packaging>pom</packaging>
@@ -11,9 +10,6 @@
     <modules>
         <module>Cigna</module>
         <module>Generic</module>
-
-
-
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -83,7 +79,6 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.12</version>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
     <build>
@@ -107,6 +102,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>

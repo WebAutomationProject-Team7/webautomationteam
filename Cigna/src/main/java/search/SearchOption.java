@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchOption extends HomePage {
-
     @FindBy(css = "#csng-search-header > search-header-bar > form > div > cigna-typeahead > input")
     public static WebElement searchBox;
     @FindBy(xpath = "//*[@id=\"csng-search-results\"]/search-bar/h1")
@@ -37,20 +36,16 @@ public class SearchOption extends HomePage {
        // waitToBeVisible();
         searchBox.sendKeys(searchKeys, Keys.ENTER);
         return searchMessage.getText();
-
     }
     public String searchOptionTab() {
         TestLogger.log(getClass().getSimpleName() + convertToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         waitToBeVisible();
         return searchMessage.getText();
-
     }
     private String convertToString(String name) {
         return name;
     }
-
-
     List<String> keyList = new ArrayList<String>();
     List<String> messageList = new ArrayList<>();
 
@@ -60,7 +55,6 @@ public class SearchOption extends HomePage {
         keyList.add("Medical Claim Form");
         keyList.add("Hospitals");
         return keyList;
-
     }
     public List<String> searchfromdatabase() throws Exception {
         TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object() {
