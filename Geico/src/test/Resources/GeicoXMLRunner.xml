@@ -20,7 +20,7 @@
             <class name="homepagetest.YourPolicyDDTest"/>
             <class name="homepagetest.InformationDDTest"/>
             <class name="homepagetest.InsuranceDDTest"/>
-            <class name="homepagetest.SearchFunctionalityTest"/>
+            <class name="homepagetest.LoginFunctionalityTest"/>
             <class name="footerpagetest.MediaLinksTest"/>
             <class name="footerpagetest.WebsiteLinksTest"/>
             <class name="autoinsurancequotetest.YourInfoPageTest"/>
@@ -34,6 +34,8 @@
             <class name="datadriventest.LoginTestWithDataBase"/>
             <class name="datadriventest.LoginTestWithExcel"/>
             <class name="datadriventest.LoginTestWithGoogleSheetApi"/>
+            <class name="keyworddriventest.FeatureTest"/>
+
         </classes>
     </test>
 </suite>

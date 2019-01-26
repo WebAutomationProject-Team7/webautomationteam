@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
-
+import reporting.TestLogger;
 public class YourInfoPage extends QuotesOnProducts {
     QuotesOnProducts quotesOnProducts;
     @BeforeMethod
@@ -22,20 +22,24 @@ public class YourInfoPage extends QuotesOnProducts {
     @FindBy(xpath = "//*[@class='btn btn--primary btn--full-mobile btn-spotlight']")
     public static WebElement submit;
     public  void getInformationPage1QuoteWithZipCode()  {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         autoInsIcon.click();
         zipCodeTextBox.sendKeys("11432");
         getQoute.click();
     }//iframe handling
     public  void clickSkip(){
-       waitToBeVisible(skipButton);
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        waitToBeVisible(skipButton);
         skipButton.click();
     }
     public void clickNext(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         waitToBeVisible(submit);
         Actions actions=new Actions(driver);
         actions.moveToElement(submit).click().build().perform();
     }
     public String enterCustomerName(String firstName1, String lastName1){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         getInformationPage1QuoteWithZipCode();
         clickSkip();
         firstName.sendKeys(firstName1);
@@ -45,6 +49,7 @@ public class YourInfoPage extends QuotesOnProducts {
         return title;
     }
     public String enterCustomerNameWithEmptySpace(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         getInformationPage1QuoteWithZipCode();
         clickSkip();
         clickNext();
@@ -52,6 +57,7 @@ public class YourInfoPage extends QuotesOnProducts {
         return errorMessage;
     }
     public String enterCustomerDOB(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         enterCustomerName("arif", "mahmud");
         typeByCss("#date-monthdob","01");
         typeByCss("#date-daydob","01");
@@ -61,11 +67,11 @@ public class YourInfoPage extends QuotesOnProducts {
         return title;
     }
     public String enterCustomerAddress(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         enterCustomerDOB();
         typeByCss("#street","17527 wexford road");
         typeByCss("#apt","7B");
         clickNext();
         return driver.getTitle();
     }
-
 }

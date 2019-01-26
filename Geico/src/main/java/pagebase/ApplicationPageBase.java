@@ -72,7 +72,7 @@ public class ApplicationPageBase extends CommonApi {
         ism.close();
         return prop;
     }
-    public static String convertToString(String st){
+    public  String convertToString(String st){
         String splitString ;
         splitString = StringUtils.join(StringUtils.splitByCharacterTypeCamelCase(st), ' ');
         return splitString;

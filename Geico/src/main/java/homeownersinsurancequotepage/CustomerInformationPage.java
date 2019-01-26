@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
-
+import reporting.TestLogger;
 public class CustomerInformationPage extends QuotesOnProducts {
     QuotesOnProducts quotesOnProducts;
     @BeforeMethod
@@ -39,16 +39,19 @@ public class CustomerInformationPage extends QuotesOnProducts {
         radioButton2Yes.click();
     }
     public void clickOnHomeOwnersInsurance() throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         homeOwnersInsIcon.click();
         sendZipCodeKeys("11435");
     }
     public String clickToolTip(WebElement toolKit, WebElement toolKitText ) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         clickOnHomeOwnersInsurance();
         toolKit.click();
         waitToBeVisible(toolKitText);
         return toolKitText.getText();
     }
     public boolean isDivVisible(WebElement element) throws InterruptedException {
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         clickOnHomeOwnersInsurance();
         clickRadioButton();
         waitToBeVisible(element);

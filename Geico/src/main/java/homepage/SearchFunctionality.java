@@ -52,8 +52,8 @@ public class SearchFunctionality extends ApplicationPageBase {
         con.insertDataFromArrayListToSqlTable(keyList,"SearchItem","SearchKeys");
         List<String> data = con.readDataBase("SearchItem","SearchKeys");
         for (String key:data){ String messageText=searchWithENTER(key);
-         messageList.add(messageText);
-         navigateBack();
+        messageList.add(messageText);
+        navigateBack();
         }
         return messageList;
     }

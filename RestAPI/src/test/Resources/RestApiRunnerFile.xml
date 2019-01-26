@@ -12,10 +12,10 @@
 
     <test name = "API test">
         <classes>
-            <!--<class name="employee.TestAllEmployeeAPI"/>-->
-            <!--<class name="employee.TestSingleEmployeeAPI"/>-->
-            <!--<class name="cnn.TestCnnNewsApi"/>-->
-            <!--<class name="openweathermap.TestOpenWeatherMapApi"/>-->
+            <class name="employee.TestAllEmployeeAPI"/>
+            <class name="employee.TestSingleEmployeeAPI"/>
+            <class name="cnn.TestCnnNewsApi"/>
+            <class name="openweathermap.TestOpenWeatherMapApi"/>
             <class name="jsonserver.curd.operation.MyJsonServer"/>
         </classes>
     </test>

@@ -17,7 +17,7 @@ public class ConnectToSqlDB {
     public static ResultSet resultSet = null;
     public static Properties properties = null;
 
-    public static Properties loadProperties() throws IOException {
+    public  static Properties loadProperties() throws IOException {
         Properties properties = new Properties();
         File filepath = new File("C:\\Users\\arifq\\eclipse-workspace\\webautomationteam\\Geico\\src\\test\\Resources\\secret.properties");
         InputStream ism = new FileInputStream(filepath.getAbsoluteFile());
@@ -27,7 +27,7 @@ public class ConnectToSqlDB {
     }
 
 
-    public static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public  static Connection connectToSqlDatabase() throws IOException, SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
         properties = loadProperties();
         String url = properties.getProperty("MYSQLJDBC.url");
         String userName = properties.getProperty("MYSQLJDBC.userName");

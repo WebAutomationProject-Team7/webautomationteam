@@ -7,7 +7,6 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import reporting.TestLogger;
-
 import static io.restassured.RestAssured.given;
 public class MyJsonServer extends RestCommonApi {
     @Test

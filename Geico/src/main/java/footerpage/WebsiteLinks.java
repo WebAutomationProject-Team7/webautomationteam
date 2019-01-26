@@ -1,7 +1,9 @@
 package footerpage;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pagebase.ApplicationPageBase;
+import reporting.TestLogger;
 
 public class WebsiteLinks extends ApplicationPageBase {
     @FindBy(css="#footer-links-secondary > ul > li:nth-child(1) > a")
@@ -15,28 +17,33 @@ public class WebsiteLinks extends ApplicationPageBase {
     @FindBy(linkText = "SITE MAP")
     public static WebElement siteMap;
     //PopUp window handling
-    public static String clickOnPrivacyLink(){
+    public String clickOnPrivacyLink(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         privacyLink.click();
         handleNewTab(driver);
         isPopUpWindowDisplayed(driver,"#container");
         return privacyPolicyPopupHeader.getText();
     }
-    public  static String clickOnLegal(){
+    public  String clickOnLegal(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         legalLink.click();
         String url=driver.getCurrentUrl();
         return url;
     }
-    public static String clickONCareer(){
+    public  String clickONCareer(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         clickByXpath("//div[@id='footer-links-secondary']/ul//a[@href='/careers/']");
         String url=driver.getCurrentUrl();
         return url;
     }
-    public static Boolean clickOnContact(){
+    public  Boolean clickOnContact(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         clickByXpath("//div[@id='footer-links-secondary']/ul//a[@href='/contact-us/']");
         boolean display=logo.isDisplayed();
         return display;
     }
-    public static String clickONSiteMap(){
+    public String clickONSiteMap(){
+        TestLogger.log(getClass().getSimpleName() + ": " + convertToString(new Object(){}.getClass().getEnclosingMethod().getName()));
         siteMap.click();
         String url=driver.getCurrentUrl();
         return url;
