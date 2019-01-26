@@ -1,4 +1,4 @@
-/*package database;
+package database;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class ConnectToSqlDB {
 
     public static Properties loadProperties() throws IOException {
         Properties properties = new Properties();
-        File filepath = new File("/Users/zayka/Desktop/webautomationteam/Amazon/src/test/Resources/secret.properties");
+        File filepath = new File("/Users/zayka/Desktop/webautomationteam_1/Amazon/src/test/Resources/secret.properties");
         InputStream ism = new FileInputStream(filepath.getAbsoluteFile());
         properties.load(ism);
         ism.close();
@@ -262,8 +262,8 @@ public class ConnectToSqlDB {
             e.printStackTrace();
         }
     }
-}*/
-package database;
+}
+/*package database;
 import org.seleniumhq.jetty9.server.Authentication;
 
 import java.io.FileInputStream;
@@ -284,7 +284,7 @@ public class ConnectToSqlDB {
 
     public static Properties loadProperties() throws IOException{
         Properties prop = new Properties();
-        InputStream ism = new FileInputStream("/Users/zayka/Desktop/webautomationteam/Generic/secret.properties");
+        InputStream ism = new FileInputStream("/Users/zayka/Desktop/webautomationteam_1/Amazon/src/test/Resources/secret.properties");
         prop.load(ism);
         ism.close();
         return prop;
@@ -296,7 +296,6 @@ public class ConnectToSqlDB {
         String url = prop.getProperty("MYSQLJDBC.url");
         String userName = prop.getProperty("MYSQLJDBC.userName");
         String password = prop.getProperty("MYSQLJDBC.password");
-        Class.forName(driverClass);
         connect = DriverManager.getConnection(url,userName,password);
         System.out.println("Database is connected");
         System.out.println();
@@ -390,9 +389,9 @@ public class ConnectToSqlDB {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
-    public void insertStringDataFromArrayListToSqlTable(List<String> list, String tableName, String columnName)
+   /* public void insertStringDataFromArrayListToSqlTable(List<String> list, String tableName, String columnName)
     {
         try {
             connectToSqlDatabase();
@@ -499,7 +498,7 @@ public class ConnectToSqlDB {
 
 
 
-    public void insertDataFromArrayListToSqlTable(List<Object> list, String tableName, String columnName)
+    public void insertDataFromArrayListToSqlTable(List<String> list, String tableName, String columnName)
     {
         try {
             connectToSqlDatabase();
@@ -654,5 +653,4 @@ public class ConnectToSqlDB {
         for(User user:list){
             System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
         }
-    }
-}
+    }*/

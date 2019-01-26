@@ -1,7 +1,9 @@
 package test;
 
 import com.relevantcodes.extentreports.ExtentReports;
-import database.ConnectToSqlDB;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -12,7 +14,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class HomePageTabTest extends HomePageTab {
-
     HomePageTab homePage;
     ExtentReports reports;
 
@@ -24,8 +25,7 @@ public class HomePageTabTest extends HomePageTab {
 
     @Test
     public void LogoDisplayed() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, IOException {
-        ConnectToSqlDB connect = new ConnectToSqlDB();
-        connect.connectToSqlDatabase();
+     homePage.isLogoDisplayed();
         boolean actual = isLogoDisplayed();
         boolean expected = true;
         Assert.assertEquals(actual, expected);
@@ -33,92 +33,85 @@ public class HomePageTabTest extends HomePageTab {
 
     @Test
     public void SearchBarDisplayed() {
+        homePage.isSearchBarDisplayed();
         boolean actual = isSearchBarDisplayed();
-        boolean expected = isSearchBarDisplayed();
-        Assert.assertEquals(actual, expected);
-    }
-
-    @Test
-    public boolean DropDownMenuClicked() {
-        dropDownMenu.click();
-        boolean actual = DropDownMenuClicked();
         boolean expected = true;
         Assert.assertEquals(actual, expected);
-        return actual;
     }
 
     @Test
-    public String HamburgerMenuClicked() {
-        hamburgerMenu.click();
-        String actual = HamburgerMenuClicked();
-        String expected = "ShopByCategory";
+    public void testDropDownMenu() throws Exception {
+        dropDownMenu.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='searchDropdownBox']")));
+        boolean expected = dropDownMenu.isDisplayed();
         Assert.assertEquals(actual, expected);
-        return actual;
     }
 
     @Test
-    public String YourAmazonDotNavBarClicked() {
+    public void testHamburgerMenu() {
+        hamburgerMenu.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nav-hamburger-menu']/i")));
+        String expected  = "Shop By Category";
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    public void YourAmazonDotNavBarClicked() {
         yourAmazonDotComNavBar.click();
-        String actual = YourAmazonDotNavBarClicked();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='nav-your-amazon']")));
         String expected = "SignIn";
         Assert.assertEquals(actual, expected);
-        return actual;
     }
 
     @Test
-    public String TodayDealsNavigation() {
-        TodayDeals.click();
-        String actual = TodayDealsNavigation();
+    public void TodayDealsNavigation() {
+        todayDeals.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nav-xshop']/a[2]")));
         String expected = "Today's Deals";
         Assert.assertEquals(actual, expected);
-        return actual;
+
     }
 
     @Test
-    public String GiftCardsDisplay() {
-        GiftCards.click();
-        String actual = GiftCardsDisplay();
+    public void GiftCardsDisplay() {
+        giftCards.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nav-xshop']/a[3]")));
         String expected = "GiftCards";
         Assert.assertEquals(actual, expected);
-
-        return actual;
     }
 
     @Test
-    public String WholeFoodTab() {
-        WholeFoods.click();
-        String actual = WholeFoodTab();
+    public void WholeFoodTab() {
+       wholeFoods.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nav-xshop']/a[4]")));
         String expected = "SavingsAreAlwaysInSeason";
-        Assert.assertEquals(actual, expected);
-        return actual;
+         Assert.assertEquals(actual, expected);
     }
 
     @Test
-    public String RegistryDisplay() {
-        Registry.click();
-        String actual = RegistryDisplay();
+    public void RegistryDisplay() {
+        registry.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nav-xshop']/a[5]")));
         String expected = "RegisterWithAmazon";
         Assert.assertEquals(actual, expected);
-        return actual;
+
     }
 
     @Test
-    public String SellNav() {
-        Sell.click();
-        String actual = SellNav();
+    public void SellNav() {
+        sell.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nav-xshop']/a[6]")));
         String expected = "ReachHundtedsOfMillionsOfCustomers";
         Assert.assertEquals(actual, expected);
-        return actual;
     }
 
     @Test
-    public String HelpPress() {
-        Help.click();
-        String actual = HelpPress();
+    public void HelpPress() {
+        help.click();
+        WebElement actual = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='nav-xshop']/a[7]")));
         String expected = "WhatWeCanHelpYouWith?";
         Assert.assertEquals(actual, expected);
 
-        return actual;
     }
 }
 

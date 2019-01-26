@@ -2,8 +2,11 @@ package pages;
 
 import base.CommonApi;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.server.handler.SendKeys;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import static java.awt.Event.ENTER;
 
 public class HomePageTab extends CommonApi {
 
@@ -20,71 +23,62 @@ public class HomePageTab extends CommonApi {
     }
 
     @FindBy(xpath = "//*[@id='twotabsearchtextbox']")
-    public static WebElement homePageSearchBar;
+    public  WebElement homePageSearchBar;
     public boolean isSearchBarDisplayed() {
         boolean searchBarDisplayed = homePageSearchBar.isDisplayed();
         return searchBarDisplayed;
     }
 
-    @FindBy(xpath = "//select[@id='searchDropdownBox']")
+    @FindBy(xpath = "//*[@id='searchDropdownBox']")
     public static WebElement dropDownMenu;
-    public static void setDropDownMenu(WebElement dropDownMenu) {
-        HomePageTab.dropDownMenu = dropDownMenu;
+    public void setDropDownMenu(WebElement dropDownMenu) {
         dropDownMenu.click();
+       dropDownMenu.getTagName();
+
     }
-    @FindBy(xpath = "//a[@id='nav-hamburger-menu']")
+    @FindBy(xpath = "//*[@id='nav-hamburger-menu']/i")
     public static WebElement hamburgerMenu;
-    public static void setHamburgerMenu(WebElement hamburgerMenu){
-        HomePageTab.hamburgerMenu = hamburgerMenu;
+    public void setHamburgerMenu(WebElement hamburgerMenu){
         hamburgerMenu.click();
 
     }
     @FindBy(xpath = "//a[@id='nav-your-amazon']")
     public static WebElement yourAmazonDotComNavBar;
-    public static void setYourAmazonDotComNavBar(WebElement yourAmazonDotComNavBar){
-        HomePageTab.yourAmazonDotComNavBar = yourAmazonDotComNavBar;
+    public void setYourAmazonDotComNavBar(WebElement yourAmazonDotComNavBar){
         yourAmazonDotComNavBar.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[2]")
-    public static WebElement TodayDeals;
-    public static void setTodayDeals(WebElement TodayDeals){
-        HomePageTab.TodayDeals = TodayDeals;
-        TodayDeals.click();
+    public static WebElement todayDeals;
+    public void setTodayDeals(WebElement todayDeals){
+        todayDeals.click();
 
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[3]")
-    public static WebElement GiftCards;
-    public static void setGiftCards(WebElement GiftCards){
-        HomePageTab.GiftCards = GiftCards;
-        GiftCards.click();
+    public static WebElement giftCards;
+    public void setGiftCards(WebElement giftCards){
+        giftCards.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[4]")
-    public static WebElement WholeFoods;
-    public static void setWholeFoods(WebElement WholeFoods){
-        HomePageTab.WholeFoods = WholeFoods;
-        WholeFoods.click();
+    public static WebElement wholeFoods;
+    public void setWholeFoods(WebElement wholeFoods){
+        wholeFoods.click();
     }
     @FindBy(xpath ="//*[@id='nav-xshop']/a[5]")
-    public static WebElement Registry;
-    public static void setRegistry(WebElement Registry){
-        HomePageTab.Registry = Registry;
-        Registry.click();
+    public static WebElement registry;
+    public void setRegistry(WebElement registry){
+        registry.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[6]")
-    public static WebElement Sell;
-    public void setSell(WebElement Sell){
-        HomePageTab.Sell = Sell;
-        Sell.click();
+    public static WebElement sell;
+    public void setSell(WebElement sell){
+        sell.click();
     }
     @FindBy(xpath = "//*[@id='nav-xshop']/a[7]")
-    public static WebElement Help;
-    public void setHelp(WebElement Help){
-        HomePageTab.Help = Help;
-        Help.click();
+    public static WebElement help;
+    public void setHelp(WebElement help){
+        help.click();
 
     }
-
-
 }
 
 

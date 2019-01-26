@@ -41,6 +41,7 @@ public class GoogleSheetReader {
             System.exit(1);
         }
     }
+
     /**
      * Creates an authorized Credential object.
      *
@@ -61,6 +62,7 @@ public class GoogleSheetReader {
         System.out.println("Credentials saved to " + DATA_STORE_DIR.getAbsolutePath());
         return credential;
     }
+
     /**
      * Build and return an authorized Sheets API client service.
      *
@@ -73,6 +75,7 @@ public class GoogleSheetReader {
                 .setApplicationName(APPLICATION_NAME)
                 .build();
     }
+
     public static List<List<Object>> getSpreadSheetRecords(String spreadsheetId, String range) throws IOException {
         // Build a new authorized API client service.
         Sheets service = getSheetsService();
@@ -90,8 +93,7 @@ public class GoogleSheetReader {
     /**
      * This method will return two dimensional array
      * We can use it with @DataProvider annotations
-     *
-     * */
+     */
 
     public static String[][] getSpreadSheetRecordsToSupplyDataProvider(String spreadsheetId, String range) throws IOException {
         // Build a new authorized API client service.
@@ -107,10 +109,10 @@ public class GoogleSheetReader {
 
         return array;
     }
+
     /**
      * Alternative way to convert List to 2d Array
-     *
-     * */
+     */
     public static String[][] getSpreadSheetRecordsToSupplyDataProviderAlternativeWay(String spreadsheetId, String range) throws IOException {
         // Build a new authorized API client service.
 

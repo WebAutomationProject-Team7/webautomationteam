@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Amazon Automation Script " parallel="false">
-    <!--<parameter name="useCloudEnv" value="false"/>
-   <parameter name="cloudEnvName" value="browserstack"/>-->
+    <!--saucelab-->
+    <parameter name="useCloudEnv" value="true"/>
+   <parameter name="cloudEnvName" value="browserstack"/>
 
     <parameter name="os" value="mac"/>
     <parameter name="os_version" value="10"/>
@@ -15,11 +16,15 @@
         <classes>
             <!--<class name="test.HomePageTabTest"/>-->
             <!--<class name="test.FooterPageGetToKnowUsTest"/>-->
-            <!--<class name="test.FooterMakeMoneyWithUsTest"/>-->
+            <class name="test.FooterMakeMoneyWithUsTest"/>
             <!--<class name="test.FooterAmazonPaymentProductsTest"/>-->
             <!--<class name="test.HomePageSearchBoxTest"/>-->
-            <!--<class name="test.datasourseTest.DatabaseOperationTest"/>-->
-            <class name="test.LoginPageWithExcelTest"/>
+            <!--<class name="test.DatabaseSearchPageTest"/>-->
+            <!--<class name="test.SearchTestWithExcelSheet"/>-->
+            <!--<class name="test.SearchTestWithGoogleSheetAPI"/>-->
+            <!--<class name="test.SearchTestWithExcelSheet"/>-->
+            <!--<class name="test.DropDownMenuTest"/>-->
+            <!--<class name="test.DropDownMenuTest"/>-->
 
 
 
